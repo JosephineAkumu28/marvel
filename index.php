@@ -26,19 +26,25 @@ $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 
 // prepare and bind
-$stmt = $conn->prepare("SELECT user_id FROM marvel_users_auth where user_name=? and user_password=?");
+$stmt = $conn->prepare("SELECT user_id,user_type FROM marvel_users_auth where user_name=? and user_password=?");
 $stmt->bind_param("ss", $user_name, $password_one);
  $stmt->execute();
- $stmt->bind_result($user_id);
+ $stmt->bind_result($user_id,$user_type);
  $stmt->fetch();
- echo $user_id;
- if($user_id===null){
- $user_error='<div class="alert alert-danger alert-dismissible fade show w-100">Wrong username
+
+ if($user_id!=null){
+     if($user_type=="fuck_you") {
+         header("Location:donorHome.html");
+     }else{
+
+     }
+        
+ }else{
+     $user_error='<div class="alert alert-danger alert-dismissible fade show w-100">Wrong username
                        or Password
                         <button class="close" role="button" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
                     </div>';
      echo $user_error;
-        
  }
   
 // set parameters and execute
@@ -71,12 +77,11 @@ echo $conn->error;
         <!--</div>-->
 
         <div class="mt-5 col-sm-10 col-md-7 col-lg-5 col-xl-4">
-            <div class="card shadow-lg">
+            <div class="card shadow-lg ">
                 <img class="card-img-top" src="images/happy1.jpeg" alt="sign up image">
                 <form method="post" enctype="multipart/form-data"   action="<?php echo $_SERVER['PHP_SELF'] ?>" >
                 <div class="card-body">
                     <h4 class="card-title ">LOG IN</h4>
-                        <?php echo $user_error ?>
                         <div class="form-group">
                             <label class="col-form-label form-text">User Name</label>
                             <input class="form-control" type="email" name="email" required>

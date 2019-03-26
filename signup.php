@@ -7,6 +7,81 @@
 
 </head>
 <body>
+<?php
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "marvel_database";
+    $user_name=$_POST['email'];
+    $password_one=$_POST['password_one'];
+    $password_two=$_POST['password_two'];
+    $user_category=$_POST['user_type'];
+    $usr=$_POST['usr'];
+
+
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql ="use marvel_database";
+    if($conn->query($sql)===TRUE){
+
+// prepare and bind
+        $stmt = $conn->prepare("INSERT INTO marvel_users_auth (user_name, user_password, user_type,user_id,user_category) VALUES (?, ?, ?, ?,?)");
+        $pass_to_store = password_hash($password_one,PASSWORD_DEFAULT);
+        $user_id = md5($user_name);
+        $stmt->bind_param("sssss", $user_name, $pass_to_store, $usr,$user_id,$user_category);
+        $stmt->execute();
+
+        $stmt = $conn->prepare("select user_category from marvel_users_auth where user_id=? ");
+        $stmt->bind_param("s",$user_id);
+        $stmt->execute();
+        $stmt->bind_result($user_category);
+
+        $stmt->fetch();
+        if($user_category="NGO"){
+
+        }
+        switch ($user_category){
+            case "NGO":
+                header("Location:othersProfile.htm");
+                break;
+            case "church":
+                header("Location:othersProfile.htm");
+                break;
+            case "self_help":
+                header("Location:othersProfile.htm");
+                break;
+            case "well_wisher":
+                header("Location:othersProfile.htm");
+                break;
+            case "others":
+                header("Location:othersProfile.htm");
+                break;
+            case "GOK" :
+                header("Location:othersProfile.htm");
+                break;
+            case "children_homes":
+                header("Location:othersProfile.htm");
+                break;
+            case "clergy" :
+                header("Location:othersProfile.htm");
+                break;
+        };
+
+        $stmt->close();
+        $conn->close();
+    }else{
+        echo $conn->error;
+    }
+
+}
+?>
 <script src="js/jquery-3.3.1.min.js"> </script>
 <script src="bootstrap/js/bootstrap.min.js"> </script>
 
@@ -55,14 +130,15 @@
                                 <input class="form-control" type="password_one" name="password_two">
 
                             </div>
+                            <input tabindex="-1" class="d-none" type="text" name="usr" value="request">
                             <div class="form-group">
                                 <label class="col-form-label form-text" >User Type</label>
-                                <select class="form-control" name="use_type">
-                                    <option>Self help-Group</option>
-                                    <option>Government officials eg chiefs</option>
-                                    <option>Clergy</option>
-                                    <option>Children Homes</option>
-                                    <option>Others eg headmasters,principals</option>
+                                <select class="form-control" name="user_type">
+                                    <option value="self_help">Self help-Group</option>
+                                    <option value="GOK">Government officials eg chiefs</option>
+                                    <option value="clergy">Clergy</option>
+                                    <option value="children_homes">Children Homes</option>
+                                    <option value="others">Others eg headmasters,principals</option>
                                 </select>
 
                             </div>
@@ -95,14 +171,15 @@
                                 <input class="form-control" type="password" name="password_two">
 
                             </div>
+                            <input tabindex="-1" class="d-none" type="text" name="usr" value="donor">
                             <div class="form-group">
                                 <label class="col-form-label form-text" >Donor Type</label>
                                 <select class="form-control" name="user_type">
-                                    <option>Self help-Group</option>
-                                    <option>NGO,s</option>
-                                    <option>Church</option>
-                                    <option>Well Wisher</option>
-                                    <option>Others</option>
+                                    <option value="self_help">Self help-Group</option>
+                                    <option value="NGO">NGO,s</option>
+                                    <option value="church">Church</option>
+                                    <option value="well_wisher">Well Wisher</option>
+                                    <option value="others">Others</option>
                                 </select>
 
                             </div>
@@ -127,46 +204,7 @@
 
     </div>
 </div>
-    <?php
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "marvel_database";
-$user_name=$_POST['email'];
-$password_one=$_POST['password_one'];
-$password_two=$_POST['password_two'];
-$user_type="fuck_you";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
-$sql ="use marvel_database";
-if($conn->query($sql)===TRUE){
-
-// prepare and bind
-$stmt = $conn->prepare("INSERT INTO marvel_users_auth (user_name, user_password, user_type,user_id) VALUES (?, ?, ?, ?)");
-$pass_to_store = password_hash($password_one,PASSWORD_DEFAULT);
-$user_id = md5($user_name);
-$stmt->bind_param("ssss", $user_name, $pass_to_store, $user_type,$user_id);
-$stmt->execute();
-
-// set parameters and execute
-
-
-$stmt->close();
-$conn->close();
-}else{
-echo $conn->error;
-}
-
-}
-?>
 
 </body>
 </html>
