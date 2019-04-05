@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+?>
+
+
 <!DOCTYPE>
 <html>
 <head>
@@ -44,35 +51,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bind_result($user_category);
 
         $stmt->fetch();
-        if($user_category="NGO"){
+        if($user_category!=null) {
+            $_SESSION["ID"] = $user_id;
 
+            switch ($user_category) {
+                case "NGO":
+                    header("Location:othersProfile.htm");
+                    break;
+                case "church":
+                    header("Location:othersProfile.htm");
+                    break;
+                case "self_help":
+                    header("Location:othersProfile.htm");
+                    break;
+                case "well_wisher":
+                    header("Location:profiles/wellWisherprofile.php");
+                    break;
+                case "others":
+                    header("Location:profiles/othersProfile.php");
+                    break;
+                case "GOK" :
+                    header("Location:profiles/govermentofficialProfile.php");
+                    break;
+                case "children_homes":
+                    header("Location:othersProfile.htm");
+                    break;
+                case "clergy" :
+                    header("Location:profiles/clergyprofile.php");
+                    break;
+            };
         }
-        switch ($user_category){
-            case "NGO":
-                header("Location:othersProfile.htm");
-                break;
-            case "church":
-                header("Location:othersProfile.htm");
-                break;
-            case "self_help":
-                header("Location:othersProfile.htm");
-                break;
-            case "well_wisher":
-                header("Location:othersProfile.htm");
-                break;
-            case "others":
-                header("Location:othersProfile.htm");
-                break;
-            case "GOK" :
-                header("Location:othersProfile.htm");
-                break;
-            case "children_homes":
-                header("Location:othersProfile.htm");
-                break;
-            case "clergy" :
-                header("Location:othersProfile.htm");
-                break;
-        };
 
         $stmt->close();
         $conn->close();

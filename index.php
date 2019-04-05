@@ -1,7 +1,13 @@
-<!DOCTYPEhtml>
+
+
+
 <?php
+session_start();
 $user_error="";
 ?>
+
+
+<!DOCTYPEhtml>
 
 
 <?php
@@ -33,6 +39,7 @@ $stmt->bind_param("ss", $user_name, $password_one);
  $stmt->fetch();
 
  if($user_id!=null){
+     $_SESSION["ID"] = $user_id;
      if($user_type=="fuck_you") {
          header("Location:donorHome.html");
      }else{

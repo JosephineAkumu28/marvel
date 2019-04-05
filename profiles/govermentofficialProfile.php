@@ -1,3 +1,5 @@
+
+<?php session_start() ?>
 <!DOCTYPEhtml>
 <html>
 <head>
@@ -27,12 +29,14 @@ die("Connection failed: " . $conn->connect_error);
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 $stmt = $conn->prepare("select user_name from marvel_users_auth Where user_id=? ");
-$stmt->bind_param("s",$_session_id);
-$stmt->execute();
+$stmt->bind_param("s",$_SESSION['ID']);
+if(!$stmt->execute()){
+   echo $stmt->error;
+}
 $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
-if($username!=null && $_SERVER["REQUEST_METHOD"]==POST){
+if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 $fist_name = $_POST["first_name"];
 $middle_name=  $_POST["middle_name"];
 $last_name =  $_POST["last_name"];
@@ -43,11 +47,15 @@ $county =  $_POST["county"];
 $region =  $_POST["region"];
 $area =  $_POST["area"];
 $description = $_POST["description"];
+$role = $_POST["role"];
+$position =$_POST["position"];
 
-$stmt = $conn->prepare("insert first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description
-into marvel_well_wishers values (?,?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("ssssssssss",$fist_name,$middle_name,$last_name,
-$id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
+$stmt = $conn->prepare("insert into government_officials (first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,
+area,description,position_,role,owner_id)
+ values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt->bind_param("sssssssssssss",$fist_name,$middle_name,$last_name,
+$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$position,$role,$_SESSION["ID"]);
+echo $stmt->error;
 if($stmt->execute()){
 header("Location:verify.php");
 
@@ -65,9 +73,13 @@ echo $stmt->error;
 
 
 
+}elseif ($username!=null){
+
+
+
+
 }else{
 
-header("Location:index.php");
 
 
 }
@@ -85,14 +97,12 @@ echo "connection error".$conn->error;
 }else{
 
 
-header("Location:index.php");
+//header("Location:index.php");
 }
 
 
 
 ?>
-
-
 
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
     <a class="navbar-brand" href="#"> <img src="../images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
@@ -161,91 +171,85 @@ header("Location:index.php");
     </div>
     <div class="row mt-5 justify-content-center">
         <form class="col-sm-12 col-md-10 col-lg-9 col-xl-8 align-self-center" action="<?php echo $_SERVER["PHP_SELF"];?> " method="post" enctype="multipart/form-data">
-        <div class="row justify-content-around">
-            <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
-                <div class="form-group">
-                    <label class="col-form-label form-text">First Name</label>
-                    <input class="form-control " type="text" required name="first_name">
-                </div>
-            </div>
-            <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
-                <div class="form-group">
-                    <label class="col-form-label form-text">Middle Name</label>
-                    <input class="form-control" type="text" required name="middle_name">
-                </div>
-            </div>
-            <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
-                <div class="form-group">
-                    <label class="col-form-label form-text">Last Name</label>
-                    <input class="form-control" type="text" required name="last_name">
-                </div>
-            </div>
-
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-md-4 col-sm-11 col-lg-4 col-xl-4">
-                <div class="form-group">
-                    <label class="col-form-label form-text">Id Number</label>
-                    <input class="form-control" type="number" required name="id_no">
-                </div>
-
-            </div>
-            <div class="col-md-6 col-sm-11 col-lg-6 col-xl-6">
-                <div class="form-group ">
-                    <label class="col-form-label form-text">Alternative Email</label>
-                    <input class="form-control align-self-end" type="email" name="alternative_email">
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-around mb-3">
-            <div class="col-md-5 col-lg-4 col-xl-4 col-sm-11">
-                <div class="form-group">
-                    <label class="col-form-label form-text">Phone no</label>
-                    <input class="form-control" type="number" required name="phone_no">
-                </div>
-
-            </div>
-            <div class="col-6">
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
-                <div class="form-group">
-                    <label class="col-form-label form-text">County</label>
-                    <input class="form-control " type="text" required name="county">
-                </div>
-            </div>
-            <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
-                <div class="form-group">
-                    <label class="col-form-label form-text">Region</label>
-                    <input class="form-control" type="text" required name="region">
-                </div>
-            </div>
-            <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
-                <div class="form-group">
-                    <label class="col-form-label form-text">Area</label>
-                    <input class="form-control" type="text" required name="area">
-                </div>
-            </div>
-
-        </div>
             <div class="row justify-content-around">
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Religion</label>
-                        <input class="form-control " type="password">
+                        <label class="col-form-label form-text">First Name</label>
+                        <input class="form-control " type="text" required name="first_name">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Church Location</label>
-                        <input class="form-control" type="password">
+                        <label class="col-form-label form-text">Middle Name</label>
+                        <input class="form-control" type="text" required name="middle_name">
+                    </div>
+                </div>
+                <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Last Name</label>
+                        <input class="form-control" type="text" required name="last_name">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-md-4 col-sm-11 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Id Number</label>
+                        <input class="form-control" type="number" required name="id_no">
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-11 col-lg-6 col-xl-6">
+                    <div class="form-group ">
+                        <label class="col-form-label form-text">Alternative Email</label>
+                        <input class="form-control align-self-end" type="email" name="alternative_email">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-around mb-3">
+                <div class="col-md-5 col-lg-4 col-xl-4 col-sm-11">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Phone no</label>
+                        <input class="form-control" type="number" required name="phone_no">
+                    </div>
+
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">County</label>
+                        <input class="form-control " type="text" required name="county">
+                    </div>
+                </div>
+                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Region</label>
+                        <input class="form-control" type="text" required name="region">
+                    </div>
+                </div>
+                <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Area</label>
+                        <input class="form-control" type="text" required name="area">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Government position</label>
+                        <input class="form-control " type="text" required name="position">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" required name="role">
                     </div>
                 </div>
 
@@ -255,7 +259,7 @@ header("Location:index.php");
                 <h4 class="form-text text-center">Description</h4>
                 </div>
                 <div class="col-10">
-                <textarea class="form-control align-self-center">
+                <textarea class="form-control align-self-center" required name="description">
 
                 </textarea>
                 </div>

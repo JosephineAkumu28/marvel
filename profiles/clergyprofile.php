@@ -1,3 +1,5 @@
+
+<?php session_start() ?>
 <!DOCTYPEhtml>
 <html>
 <head>
@@ -27,12 +29,12 @@ die("Connection failed: " . $conn->connect_error);
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 $stmt = $conn->prepare("select user_name from marvel_users_auth Where user_id=? ");
-$stmt->bind_param("s",$_session_id);
+$stmt->bind_param("s",$_SESSION['ID']);
 $stmt->execute();
 $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
-if($username!=null && $_SERVER["REQUEST_METHOD"]==POST){
+if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 $fist_name = $_POST["first_name"];
 $middle_name=  $_POST["middle_name"];
 $last_name =  $_POST["last_name"];
@@ -43,11 +45,14 @@ $county =  $_POST["county"];
 $region =  $_POST["region"];
 $area =  $_POST["area"];
 $description = $_POST["description"];
+$religion =  $_POST["religion"];
+$location = $_POST["location"];
+$role = $_POST["role"];
 
-$stmt = $conn->prepare("insert first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description
-into marvel_well_wishers values (?,?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("ssssssssss",$fist_name,$middle_name,$last_name,
-$id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
+$stmt = $conn->prepare("insert into marvel_clergy (first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description,religion,location,role,owner_id)
+ values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt->bind_param("ssssssssssssss",$fist_name,$middle_name,$last_name,
+$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$religion,$location,$role,$_SESSION["ID"]);
 if($stmt->execute()){
 header("Location:verify.php");
 
@@ -65,11 +70,13 @@ echo $stmt->error;
 
 
 
+}elseif($username!=null){
+
+
+
+
 }else{
-
-header("Location:index.php");
-
-
+    header("Location:index.php");
 }
 
 
@@ -85,7 +92,7 @@ echo "connection error".$conn->error;
 }else{
 
 
-header("Location:index.php");
+//header("Location:index.php");
 }
 
 
@@ -233,19 +240,19 @@ header("Location:index.php");
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Religion</label>
-                        <input class="form-control " type="password">
+                        <input class="form-control " type="text" required name="religion">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Church Location</label>
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="text" required name="location">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" name="role" required>
                     </div>
                 </div>
 
@@ -255,7 +262,7 @@ header("Location:index.php");
                 <h4 class="form-text text-center">Description</h4>
                 </div>
                 <div class="col-10">
-                <textarea class="form-control align-self-center">
+                <textarea class="form-control align-self-center" name="description">
 
                 </textarea>
                 </div>
