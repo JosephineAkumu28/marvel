@@ -215,29 +215,95 @@ header("Location:index.php");
         </li>
     </div>
 </nav>
-<?php
+<div class="container">
 
-
-$stmt = $conn->prepare("select* from marvel_request_table");
-if($stmt->execute()){
-    $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$date,$owner_id);
-    while ($stmt->fetch()){
-        echo $title ."<br>";
-    }
-}else{
-    echo $stmt->error;
-}
+        <?php
+        $stmt = $conn->prepare("select* from marvel_request_table");
+        if($stmt->execute()){
+        $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$date,$owner_id);
+        while ($stmt->fetch()){
 
 
 
 
 
 
+        echo '
+        <div class="row  mt-3 ">
+        <div class="col-12 bg-light mt-2 ">
+            <div class="row">
+                <div class="col-4 p-0">
+                    <img src="'.$img_url.'" class="img-fluid" height="300px">
+
+                </div>
+                <div class="col-8">
+                    <div class="row justify-content-between p-1">
+                        <h5>'.$title.'</h5>
+                        <small class="small text-muted">'.$date.'</small>
+                    </div>
+                    <div class="row p-1 mt-0">
+                        <strong>
+                            Description
+
+                        </strong>
+                    </div>
+                    <div class="row">
+                        <p>
+                            ksdgiueigdfigydguigdiugdigs fdjgicguigiuduifguifgiugfiu
+
+                        </p>
+
+                    </div>
+                    <div class="row al align-content-end">
+                        <div class="col-10"></div>
+                        <div class="col-2">
+                            <button class="btn btn-outline-success">hisss</button>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+                </div>
+
+
+    </div>
+
+            ';
 
 
 
 
-?>
+        }
+        }else{
+        echo $stmt->error;
+        }
+
+
+
+
+
+
+
+
+
+
+        ?>
+
+
+
+</div>
+
+
+
+
+
 
 <script>
     bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
