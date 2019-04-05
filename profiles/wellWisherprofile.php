@@ -15,10 +15,14 @@ $session = session_start();
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 </head>
 <body>
+
 <script src="../js/jquery-3.3.1.min.js"> </script>
 <script src="../bootstrap/js/bootstrap.min.js"> </script>
-<script src="../js/all.js"></script>
 <script src="../fontawesome/js/all.min.js"></script>
+<script src="../js/nicEdit.js"></script>
+<script src="../js/all.js"></script>
+
+
 
 <?php
 if($_SESSION["ID"]!=null){
@@ -62,7 +66,7 @@ if($_SESSION["ID"]!=null){
 
 
             }else{
-                echo $stmt->error;
+                 echo $stmt->error;
             }
 
 
@@ -267,6 +271,9 @@ header("Location:index.php");
 
 
 </div>
+<script>
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+</script>
 
 </body>
 </html>

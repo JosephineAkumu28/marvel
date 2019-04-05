@@ -40,9 +40,11 @@ $stmt->bind_param("ss", $user_name, $password_one);
 
  if($user_id!=null){
      $_SESSION["ID"] = $user_id;
-     if($user_type=="fuck_you") {
-         header("Location:donorHome.html");
+     if($user_type=="donor") {
+         header("Location:donorHome.php");
      }else{
+         header("Location:requester.php");
+         $x=password_hash("",PASSWORD_DEFAULT);
 
      }
         

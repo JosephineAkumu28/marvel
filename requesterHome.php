@@ -1,3 +1,4 @@
+<?php session_start() ?>
 
 
 <!DOCTYPE html>
@@ -32,21 +33,15 @@ $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
 if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
-$fist_name = $_POST["first_name"];
-$middle_name=  $_POST["middle_name"];
-$last_name =  $_POST["last_name"];
-$id_number =  $_POST["id_no"];
-$alternative_email = $_POST["alternative_email"];
-$phone_no =  $_POST["phone_no"];
-$county =  $_POST["county"];
-$region =  $_POST["region"];
-$area =  $_POST["area"];
+$title = $_POST["title"];
+$category = $_POST["category"];
+$quantity = $_POST["quantity"];
 $description = $_POST["description"];
+$img_url = "ddd";
 
-$stmt = $conn->prepare("insert into marvel_well_wishers (first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description,owner_id)
-values (?,?,?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("sssssssssss",$fist_name,$middle_name,$last_name,
-$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$_SESSION["ID"]);
+$stmt = $conn->prepare("insert into marvel_request_table (title,img_url,category,quantity,description,owner_id)
+values (?,?,?,?,?,?)");
+$stmt->bind_param("sssiss",$title,$img_url,$category,$quantity,$description,$_SESSION["ID"]);
 if($stmt->execute()){
 header("Location:verify.php");
 
@@ -145,7 +140,7 @@ header("Location:index.php");
                         </button>
 
                     </div>
-                    <form style="color:black " class="container-fluid">
+                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="modal-body">
                         <div class="w-100">
                             <img class="img-fluid" src="images/happy1.jpeg" height="200px">
@@ -157,11 +152,11 @@ header("Location:index.php");
                             <hr>
                             <div class="form-group mt-1">
                                 <label >Request Title</label>
-                                <input type="email" class="form-control"   placeholder="eg Request for pads">
+                                <input type="text" name="title" class="form-control"   placeholder="eg Request for pads">
                             </div>
                             <div class="form-group mt-1" name="category">
                                 <label >Request Category</label>
-                                <select class="custom-select">
+                                <select class="custom-select" name="category">
                                     <option value="sanitary_pads">Sanitary Towels</option>
                                     <option value="underpants">Under Pants</option>
 
@@ -171,7 +166,7 @@ header("Location:index.php");
                             </div>
                             <div class="form-group mt-1">
                                 <label>Quantity</label>
-                                <input type="number" class="form-control"   placeholder="eg 10000">
+                                <input type="number" class="form-control" name="quantity"  placeholder="eg 10000">
                                 <small  class="form-text text-muted">A rough estimation of the number required.</small>
                             </div>
                             <hr>
