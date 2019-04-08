@@ -1,6 +1,6 @@
-<?php session_start() ?>
 
 
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,13 @@
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
 
 </head>
+<body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/nicEdit.js"></script>
+<script src="js/all.js"></script>
+<script src="fontawesome/js/all.min.js"></script>
+
 <?php
 if($_SESSION["ID"]!=null){
     $servername = "localhost";
@@ -32,11 +39,14 @@ $stmt->execute();
 $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
+
+//fetch requests
 if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
     $title = $_POST["title"];
     $category = $_POST["category"];
     $quantity = $_POST["quantity"];
     $description = $_POST["description"];
+    $process = $_POST["process"];
     $img_url = "ddd";
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -75,11 +85,11 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $stmt = $conn->prepare("insert into marvel_request_table (title,img_url,category,quantity,description,owner_id)
-values (?,?,?,?,?,?)");
-            $stmt->bind_param("sssiss",$title,$target_file,$category,$quantity,$description,$_SESSION["ID"]);
+            $stmt = $conn->prepare("insert into marvel_donation_table (title,img_url,category,quantity,description,request_process,owner_id)
+values (?,?,?,?,?,?,?)");
+            $stmt->bind_param("sssisss",$title,$target_file,$category,$quantity,$description,$process,$_SESSION["ID"]);
             if($stmt->execute()){
-                header("Location:myrequest.php");
+                header("Location:verify.php");
 
 
             }else{
@@ -121,6 +131,8 @@ header("Location:index.php");
 echo "connection error".$conn->error;
 }
 
+
+
 }else{
 
 
@@ -131,12 +143,7 @@ header("Location:index.php");
 
 ?>
 
-<body>
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="js/all.js"></script>
-<script src="fontawesome/js/all.min.js"></script>
-<script src="js/nicEdit.js"></script>
+
 
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
     <a class="navbar-brand" href="#"> <img src="images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
@@ -147,10 +154,10 @@ header("Location:index.php");
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>
+            <li class="nav-item  active">
+                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>My Donations</a>
             </li>
 
             <li class="nav-item">
@@ -174,7 +181,7 @@ header("Location:index.php");
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Request</button>
+        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Donate</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -185,56 +192,58 @@ header("Location:index.php");
                         </button>
 
                     </div>
-                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                    <div class="modal-body">
-                        <div class="w-100">
-                            <img class="img-fluid" src="images/happy1.jpeg" height="200px">
-                             <hr>
-                            <div class="custom-file mt-1">
-                                <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            <hr>
-                            <div class="form-group mt-1">
-                                <label >Request Title</label>
-                                <input type="text" name="title" class="form-control"   placeholder="eg Request for pads">
-                            </div>
-                            <div class="form-group mt-1" name="category">
-                                <label >Request Category</label>
-                                <select class="custom-select" name="category">
-                                    <option value="sanitary_pads">Sanitary Towels</option>
-                                    <option value="underpants">Under Pants</option>
-
-                                </select>
-                                <small  class="form-text text-muted">select an option above.</small>
-
-                            </div>
-                            <div class="form-group mt-1">
-                                <label>Quantity</label>
-                                <input type="number" class="form-control" name="quantity"  placeholder="eg 10000">
-                                <small  class="form-text text-muted">A rough estimation of the number required.</small>
-                            </div>
-                            <hr>
-                            <div class="row justify-content-center">
-                                <div class="col-12">
-                                    <h4 class="form-text text-center">Description</h4>
+                    <form style="color:black" action="<?php echo $_SERVER["PHP_SELF"]?>" enctype="multipart/form-data" method="post">
+                        <div class="modal-body">
+                            <div class="w-100">
+                                <img class="img-fluid" src="images/happy1.jpeg" height="200px">
+                                <hr>
+                                <div class="custom-file mt-1">
+                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
-                                <div class="col-10 d-inline-block">
+                                <hr>
+                                <div class="form-group mt-1">
+                                    <label >Donation Title</label>
+                                    <input type="text" class="form-control" name="title" required   placeholder="eg Pads donation">
+                                </div>
+                                <div class="form-group mt-1" name="category">
+                                    <label >Request Category</label>
+                                    <select class="custom-select" name="category" required>
+                                        <option value="sanitary_pads">Sanitary Towels</option>
+                                        <option value="underpants">Under Pants</option>
+
+                                    </select>
+                                    <small  class="form-text text-muted">select an option above.</small>
+
+                                </div>
+                                <div class="form-group mt-1">
+                                    <label>Quantity</label>
+                                    <input type="number" class="form-control" name="quantity" required   placeholder="eg 10000">
+                                    <small  class="form-text text-muted">A rough estimation of the number required.</small>
+                                </div>
+                                <hr>
+                                <div class="form-group">
                                 <textarea class="form-control align-self-center w-100" required name="description">
 
                                 </textarea>
                                 </div>
+                                <hr>
+                                <div class="form-group"><label >Application  Procedure</label>
+                                <textarea class="form-control align-self-center w-100" required name="process">
+
+                                </textarea>
+                                </div>
+
+
 
                             </div>
 
+
                         </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                        <input type="submit" value="submit" class="btn btn-primary">
-                    </div>
+                        <div class="modal-footer">
+                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                            <input type="submit" value="submit" class="btn btn-primary">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -252,29 +261,28 @@ header("Location:index.php");
     </div>
 </nav>
 <div class="container">
+
     <?php
-    $stmt = $conn->prepare("select* from marvel_donation_table");
+    $stmt = $conn->prepare("select* from marvel_donation_table where owner_id=?");
+    $stmt->bind_param("s",$_SESSION["ID"]);
     if($stmt->execute()){
         $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$procces,$date,$owner_id);
-        while ($stmt->fetch()){
+        if($stmt->num_rows>0) {
+            while ($stmt->fetch()) {
 
 
-
-
-
-
-            echo '
+                echo '
         <div class="row  mt-3 ">
         <div class="col-12 bg-light mt-2 ">
             <div class="row">
                 <div class="col-4 p-0">
-                    <img src="'.$img_url.'" class="img-fluid" height="300px">
+                    <img src="' . $img_url . '" class="img-fluid" height="300px">
 
                 </div>
                 <div class="col-8">
                     <div class="row justify-content-between p-1">
-                        <h5>'.$title.'</h5>
-                        <small class="small text-muted"><span class="text-info">Donation date:</span>'.$date.'</small>
+                        <h5>' . $title . '</h5>
+                        <small class="small text-muted"><span class="text-info">Donation date:</span>' . $date . '</small>
                     </div>
                     <div class="row p-1 mt-0">
                         <strong>
@@ -313,8 +321,10 @@ header("Location:index.php");
             ';
 
 
+            }
+        }else{
 
-
+            echo "No donations yet";
         }
     }else{
         echo $stmt->error;
@@ -333,8 +343,14 @@ header("Location:index.php");
 
 
 </div>
+
+
+
+
+
+
 <script>
-     bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
 </script>
 </body>
 </html>

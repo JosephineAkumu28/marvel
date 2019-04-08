@@ -1,15 +1,17 @@
+
+<?php session_start() ?>
 <!DOCTYPEhtml>
 <html>
 <head>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 <body>
-<script src="../js/jquery-3.3.1.min.js"> </script>
-<script src="../bootstrap/js/bootstrap.min.js"> </script>
-<script src="../js/all.js"></script>
-<script src="../fontawesome/js/all.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"> </script>
+<script src="bootstrap/js/bootstrap.min.js"> </script>
+<script src="js/all.js"></script>
+<script src="fontawesome/js/all.min.js"></script>
 
 <?php
 if($_SESSION["ID"]!=null){
@@ -27,12 +29,12 @@ die("Connection failed: " . $conn->connect_error);
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 $stmt = $conn->prepare("select user_name from marvel_users_auth Where user_id=? ");
-$stmt->bind_param("s",$_session_id);
+$stmt->bind_param("s",$_SESSION['ID']);
 $stmt->execute();
 $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
-if($username!=null && $_SERVER["REQUEST_METHOD"]==POST){
+if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 $fist_name = $_POST["first_name"];
 $middle_name=  $_POST["middle_name"];
 $last_name =  $_POST["last_name"];
@@ -43,33 +45,81 @@ $county =  $_POST["county"];
 $region =  $_POST["region"];
 $area =  $_POST["area"];
 $description = $_POST["description"];
+$religion =  $_POST["religion"];
+$location = $_POST["location"];
+$role = $_POST["role"];
 
-$stmt = $conn->prepare("insert first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description
-into marvel_well_wishers values (?,?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("ssssssssss",$fist_name,$middle_name,$last_name,
-$id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
-if($stmt->execute()){
-header("Location:verify.php");
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+// Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+// Check file size
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+// Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $stmt = $conn->prepare("insert into marvel_clergy (first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description,religion,location,role,owner_id)
+ values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("sssssssssssssss",$fist_name,$middle_name,$last_name,$target_file,
+                $id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$religion,$location,$role,$_SESSION["ID"]);
+            if($stmt->execute()){
+                header("Location:verify.php");
+
+
+            }else{
+                echo $stmt->error;
+            }
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}elseif($username!=null){
+
+
 
 
 }else{
-echo $stmt->error;
-}
-
-
-
-
-
-
-
-
-
-
-}else{
-
-header("Location:index.php");
-
-
+    header("Location:index.php");
 }
 
 
@@ -85,27 +135,32 @@ echo "connection error".$conn->error;
 }else{
 
 
-header("Location:index.php");
+//header("Location:index.php");
 }
 
 
 
 ?>
 
+
+
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="../images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
+    <a class="navbar-brand" href="#"> <img src="images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -148,7 +203,7 @@ header("Location:index.php");
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="../images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 
@@ -159,6 +214,12 @@ header("Location:index.php");
     </div>
     <div class="row mt-5 justify-content-center">
         <form class="col-sm-12 col-md-10 col-lg-9 col-xl-8 align-self-center" action="<?php echo $_SERVER["PHP_SELF"];?> " method="post" enctype="multipart/form-data">
+           <div class="row align-items-center">
+            <div class="custom-file mt-1  col-4 offset-4 ">
+                <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
+                <label class="custom-file-label" for="customFile">Choose a profile image to upload</label>
+            </div>
+           </div>
         <div class="row justify-content-around">
             <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                 <div class="form-group">
@@ -227,39 +288,23 @@ header("Location:index.php");
             </div>
 
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h4 class="form-text text-center">Description</h4>
-            </div>
-            <div class="col-10">
-                <textarea class="form-control align-self-center" name="description">
-
-                </textarea>
-            </div>
-
-        </div>
-        <div class="row mt-5 mb-5 justify-content-center">
-            <input type="submit" name="submit_profile" value="save" class="btn btn-success">
-
-        </div>
-            </div>
             <div class="row justify-content-around">
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Field</label>
-                        <input class="form-control " type="password">
+                        <label class="col-form-label form-text">Religion</label>
+                        <input class="form-control " type="text" required name="religion">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Position</label>
-                        <input class="form-control" type="password">
+                        <label class="col-form-label form-text">Church Location</label>
+                        <input class="form-control" type="text" required name="location">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" name="role" required>
                     </div>
                 </div>
 
@@ -269,7 +314,7 @@ header("Location:index.php");
                 <h4 class="form-text text-center">Description</h4>
                 </div>
                 <div class="col-10">
-                <textarea class="form-control align-self-center">
+                <textarea class="form-control align-self-center" name="description">
 
                 </textarea>
                 </div>

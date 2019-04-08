@@ -1,15 +1,15 @@
 <!DOCTYPEhtml>
 <html>
 <head>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 <body>
-<script src="../js/jquery-3.3.1.min.js"> </script>
-<script src="../bootstrap/js/bootstrap.min.js"> </script>
-<script src="../js/all.js"></script>
-<script src="../fontawesome/js/all.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"> </script>
+<script src="bootstrap/js/bootstrap.min.js"> </script>
+<script src="js/all.js"></script>
+<script src="fontawesome/js/all.min.js"></script>
 
 <?php
 if($_SESSION["ID"]!=null){
@@ -43,12 +43,9 @@ $county =  $_POST["county"];
 $region =  $_POST["region"];
 $area =  $_POST["area"];
 $description = $_POST["description"];
-$field = $_POST[""];
-$role = $_POST["role"];
-$psition =$_POST["position"];
 
 $stmt = $conn->prepare("insert first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description
-into marvel_others_profile values (?,?,?,?,?,?,?,?,?,?)");
+into marvel_well_wishers values (?,?,?,?,?,?,?,?,?,?)");
 $stmt->bind_param("ssssssssss",$fist_name,$middle_name,$last_name,
 $id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
 if($stmt->execute()){
@@ -88,7 +85,7 @@ echo "connection error".$conn->error;
 }else{
 
 
-//header("Location:index.php");
+header("Location:index.php");
 }
 
 
@@ -96,7 +93,7 @@ echo "connection error".$conn->error;
 ?>
 
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="../images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
+    <a class="navbar-brand" href="#"> <img src="images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -151,7 +148,7 @@ echo "connection error".$conn->error;
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="../images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 
@@ -230,11 +227,33 @@ echo "connection error".$conn->error;
             </div>
 
         </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h4 class="form-text text-center">Description</h4>
+            </div>
+            <div class="col-10">
+                <textarea class="form-control align-self-center" name="description">
+
+                </textarea>
+            </div>
+
+        </div>
+        <div class="row mt-5 mb-5 justify-content-center">
+            <input type="submit" name="submit_profile" value="save" class="btn btn-success">
+
+        </div>
+            </div>
             <div class="row justify-content-around">
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Government position</label>
+                        <label class="col-form-label form-text">Field</label>
                         <input class="form-control " type="password">
+                    </div>
+                </div>
+                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Position</label>
+                        <input class="form-control" type="password">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">

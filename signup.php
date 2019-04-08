@@ -65,19 +65,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     header("Location:othersProfile.htm");
                     break;
                 case "well_wisher":
-                    header("Location:profiles/wellWisherprofile.php");
+                    header("Location:wellWisherprofile.php");
                     break;
                 case "others":
-                    header("Location:profiles/othersProfile.php");
+                    header("Location:othersProfile.php");
                     break;
                 case "GOK" :
-                    header("Location:profiles/govermentofficialProfile.php");
+                    header("Location:govermentofficialProfile.php");
                     break;
                 case "children_homes":
                     header("Location:othersProfile.htm");
                     break;
                 case "clergy" :
-                    header("Location:profiles/clergyprofile.php");
+                    header("Location:clergyprofile.php");
                     break;
             };
         }

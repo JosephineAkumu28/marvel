@@ -42,23 +42,65 @@ $stmt->close();
 
 //fetch requests
 if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
-$title = $_POST["title"];
-$category = $_POST["category"];
-$quantity = $_POST["quantity"];
-$description = $_POST["description"];
-$process = $_POST["process"];
-$img_url = "ddd";
-
-$stmt = $conn->prepare("insert into marvel_donation_table (title,img_url,category,quantity,description,request_process,owner_id)
+    $title = $_POST["title"];
+    $category = $_POST["category"];
+    $quantity = $_POST["quantity"];
+    $description = $_POST["description"];
+    $process = $_POST["process"];
+    $img_url = "ddd";
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+// Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+// Check file size
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+// Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $stmt = $conn->prepare("insert into marvel_donation_table (title,img_url,category,quantity,description,request_process,owner_id)
 values (?,?,?,?,?,?,?)");
-$stmt->bind_param("sssisss",$title,$img_url,$category,$quantity,$description,$process,$_SESSION["ID"]);
-if($stmt->execute()){
-header("Location:verify.php");
+            $stmt->bind_param("sssisss",$title,$target_file,$category,$quantity,$description,$process,$_SESSION["ID"]);
+            if($stmt->execute()){
+                header("Location:verify.php");
 
 
-}else{
-echo $stmt->error;
-}
+            }else{
+                echo $stmt->error;
+            }
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+
 
 
 
@@ -112,7 +154,10 @@ header("Location:index.php");
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
 
             <li class="nav-item">
@@ -153,7 +198,7 @@ header("Location:index.php");
                                 <img class="img-fluid" src="images/happy1.jpeg" height="200px">
                                 <hr>
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" name="img" id="customFile">
+                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <hr>
@@ -231,13 +276,13 @@ header("Location:index.php");
         echo '
         <div class="row  mt-3 ">
         <div class="col-12 bg-light mt-2 ">
-            <div class="row">
-                <div class="col-4 p-0">
-                    <img src="'.$img_url.'" class="img-fluid" height="300px">
+            <div class="row justify-content-between">
+                <div class="col-4 pr-3 pl-0">
+                    <img src="'.$img_url.'" class="card-img-top" height="180">
 
                 </div>
                 <div class="col-8">
-                    <div class="row justify-content-between p-1">
+                    <div class="row justify-content-between pl-1">
                         <h5>'.$title.'</h5>
                         <small class="small text-muted">'.$date.'</small>
                     </div>

@@ -43,8 +43,7 @@ $stmt->bind_param("ss", $user_name, $password_one);
      if($user_type=="donor") {
          header("Location:donorHome.php");
      }else{
-         header("Location:requester.php");
-         $x=password_hash("",PASSWORD_DEFAULT);
+         header("Location:requesterHome.php");
 
      }
         

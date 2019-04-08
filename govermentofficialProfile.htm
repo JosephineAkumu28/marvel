@@ -1,17 +1,15 @@
-
-<?php session_start() ?>
 <!DOCTYPEhtml>
 <html>
 <head>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 <body>
-<script src="../js/jquery-3.3.1.min.js"> </script>
-<script src="../bootstrap/js/bootstrap.min.js"> </script>
-<script src="../js/all.js"></script>
-<script src="../fontawesome/js/all.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"> </script>
+<script src="bootstrap/js/bootstrap.min.js"> </script>
+<script src="js/all.js"></script>
+<script src="fontawesome/js/all.min.js"></script>
 
 <?php
 if($_SESSION["ID"]!=null){
@@ -29,12 +27,12 @@ die("Connection failed: " . $conn->connect_error);
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 $stmt = $conn->prepare("select user_name from marvel_users_auth Where user_id=? ");
-$stmt->bind_param("s",$_SESSION['ID']);
+$stmt->bind_param("s",$_session_id);
 $stmt->execute();
 $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
-if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
+if($username!=null && $_SERVER["REQUEST_METHOD"]==POST){
 $fist_name = $_POST["first_name"];
 $middle_name=  $_POST["middle_name"];
 $last_name =  $_POST["last_name"];
@@ -45,14 +43,14 @@ $county =  $_POST["county"];
 $region =  $_POST["region"];
 $area =  $_POST["area"];
 $description = $_POST["description"];
-$religion =  $_POST["religion"];
-$location = $_POST["location"];
+$field = $_POST[""];
 $role = $_POST["role"];
+$psition =$_POST["position"];
 
-$stmt = $conn->prepare("insert into marvel_clergy (first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description,religion,location,role,owner_id)
- values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("ssssssssssssss",$fist_name,$middle_name,$last_name,
-$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$religion,$location,$role,$_SESSION["ID"]);
+$stmt = $conn->prepare("insert first_name,middle_name,last_name,id_no,alternative_email,phone_no,county,region,area,description
+into marvel_others_profile values (?,?,?,?,?,?,?,?,?,?)");
+$stmt->bind_param("ssssssssss",$fist_name,$middle_name,$last_name,
+$id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
 if($stmt->execute()){
 header("Location:verify.php");
 
@@ -70,13 +68,11 @@ echo $stmt->error;
 
 
 
-}elseif($username!=null){
-
-
-
-
 }else{
-    header("Location:index.php");
+
+header("Location:index.php");
+
+
 }
 
 
@@ -99,10 +95,8 @@ echo "connection error".$conn->error;
 
 ?>
 
-
-
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="../images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
+    <a class="navbar-brand" href="#"> <img src="images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -157,7 +151,7 @@ echo "connection error".$conn->error;
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="../images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 
@@ -239,20 +233,14 @@ echo "connection error".$conn->error;
             <div class="row justify-content-around">
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Religion</label>
-                        <input class="form-control " type="text" required name="religion">
-                    </div>
-                </div>
-                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
-                    <div class="form-group">
-                        <label class="col-form-label form-text">Church Location</label>
-                        <input class="form-control" type="text" required name="location">
+                        <label class="col-form-label form-text">Government position</label>
+                        <input class="form-control " type="password">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password" name="role" required>
+                        <input class="form-control" type="password">
                     </div>
                 </div>
 
@@ -262,7 +250,7 @@ echo "connection error".$conn->error;
                 <h4 class="form-text text-center">Description</h4>
                 </div>
                 <div class="col-10">
-                <textarea class="form-control align-self-center" name="description">
+                <textarea class="form-control align-self-center">
 
                 </textarea>
                 </div>

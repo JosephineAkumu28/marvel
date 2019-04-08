@@ -79,7 +79,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 values (?,?,?,?,?,?)");
             $stmt->bind_param("sssiss",$title,$target_file,$category,$quantity,$description,$_SESSION["ID"]);
             if($stmt->execute()){
-                header("Location:myrequest.php");
+                header("Location:verify.php");
 
 
             }else{
@@ -147,14 +147,14 @@ header("Location:index.php");
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -253,9 +253,10 @@ header("Location:index.php");
 </nav>
 <div class="container">
     <?php
-    $stmt = $conn->prepare("select* from marvel_donation_table");
+    $stmt = $conn->prepare("select* from marvel_request_table where owner_id=?");
+    $stmt->bind_param("s",$_SESSION["ID"]);
     if($stmt->execute()){
-        $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$procces,$date,$owner_id);
+        $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$date,$owner_id);
         while ($stmt->fetch()){
 
 
@@ -266,15 +267,15 @@ header("Location:index.php");
             echo '
         <div class="row  mt-3 ">
         <div class="col-12 bg-light mt-2 ">
-            <div class="row">
-                <div class="col-4 p-0">
-                    <img src="'.$img_url.'" class="img-fluid" height="300px">
+            <div class="row justify-content-between">
+                <div class="col-4 pr-3 pl-0">
+                    <img src="'.$img_url.'" class="card-img-top" height="180">
 
                 </div>
                 <div class="col-8">
-                    <div class="row justify-content-between p-1">
+                    <div class="row justify-content-between pl-1">
                         <h5>'.$title.'</h5>
-                        <small class="small text-muted"><span class="text-info">Donation date:</span>'.$date.'</small>
+                        <small class="small text-muted">'.$date.'</small>
                     </div>
                     <div class="row p-1 mt-0">
                         <strong>
@@ -330,6 +331,8 @@ header("Location:index.php");
 
 
     ?>
+
+
 
 
 </div>
