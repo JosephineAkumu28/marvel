@@ -154,7 +154,7 @@ header("Location:index.php");
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="selectorView.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -293,7 +293,10 @@ header("Location:index.php");
                     <div class="row al align-content-end">
                         <div class="col-10"></div>
                         <div class="col-2">
-                            <button class="btn btn-outline-success">hisss</button>
+                            <form class="form-inline" action="deleteRequest.php" method="post" enctype="multipart/form-data">
+                            <input class="d-none" type="text" name="request_id" value="'.$id.'" >
+                            <input type="submit" value="Delete" class="btn btn-outline-danger">
+                            </form>
                         </div>
 
 

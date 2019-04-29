@@ -56,13 +56,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             switch ($user_category) {
                 case "NGO":
-                    header("Location:othersProfile.htm");
+                    header("Location:organization_profile.php");
                     break;
                 case "church":
-                    header("Location:othersProfile.htm");
+                    header("Location:organization_profile.php");
                     break;
                 case "self_help":
-                    header("Location:othersProfile.htm");
+                    header("Location:organization_profile.php");
                     break;
                 case "well_wisher":
                     header("Location:wellWisherprofile.php");
@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     header("Location:govermentofficialProfile.php");
                     break;
                 case "children_homes":
-                    header("Location:othersProfile.htm");
+                    header("Location:organization_profile.php");
                     break;
                 case "clergy" :
                     header("Location:clergyprofile.php");

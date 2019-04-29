@@ -86,12 +86,14 @@ $role = $_POST["role"];
 // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
             $stmt = $conn->prepare("insert into marvel_clergy (first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description,religion,location,role,owner_id)
  values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             $stmt->bind_param("sssssssssssssss",$fist_name,$middle_name,$last_name,$target_file,
                 $id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$religion,$location,$role,$_SESSION["ID"]);
             if($stmt->execute()){
-                header("Location:verify.php");
+              header("Location:verification.php");
+
 
 
             }else{
@@ -116,10 +118,11 @@ $role = $_POST["role"];
 }elseif($username!=null){
 
 
-
+echo "here";
 
 }else{
-    header("Location:index.php");
+   header("Location:index.php");
+    echo "here";
 }
 
 
@@ -135,7 +138,8 @@ echo "connection error".$conn->error;
 }else{
 
 
-//header("Location:index.php");
+header("Location:index.php");
+    echo "here";
 }
 
 
@@ -321,7 +325,7 @@ echo "connection error".$conn->error;
 
             </div>
             <div class="row mt-5 mb-5 justify-content-center">
-                <input type="submit" name="submit_profile" value="save" class="btn btn-success">
+                <input type="submit" name="submit" value="save" class="btn btn-success">
 
             </div>
 

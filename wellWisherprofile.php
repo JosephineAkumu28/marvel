@@ -94,12 +94,12 @@ if($_SESSION["ID"]!=null){
 // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $stmt = $conn->prepare("insert into marvel_well_wishers (first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description,owner_id)
-             values (?,?,?,?,?,?,?,?,?,?,?)");
+                    $stmt = $conn->prepare("insert into marvel_well_wishers(first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description,owner_id)
+             values (?,?,?,?,?,?,?,?,?,?,?,?)");
                     $stmt->bind_param("ssssssssssss",$fist_name,$middle_name,$last_name,$target_file,
                         $id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$_SESSION["ID"]);
                     if($stmt->execute()){
-                        header("Location:verify.php");
+                        header("Location:verification.php");
 
 
                     }else{

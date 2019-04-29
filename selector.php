@@ -21,35 +21,136 @@ if($conn->query($sql)===TRUE) {
         $stmt->bind_param("s", $_SESSION["ID"]);
         $stmt->execute();
         $stmt->bind_result($user_category);
-echo $user_category;
+
         $stmt->fetch();
+        $stmt->close();
         if ($user_category != null) {
-            $_SESSION["ID"] = $user_id;
 
             switch ($user_category) {
                 case "NGO":
-                    header("Location:othersProfile.htm");
-                    break;
+                    $stmt = $conn->prepare("select owner_id from marvel_organization_profile where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:organization_profile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
                 case "church":
-                    header("Location:othersProfile.htm");
+                    $stmt = $conn->prepare("select owner_id from marvel_organization_profile where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:organization_profile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
+
                     break;
                 case "self_help":
-                    header("Location:othersProfile.htm");
+                    $stmt = $conn->prepare("select owner_id from marvel_organization_profile where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:organization_profile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
+
                     break;
                 case "well_wisher":
-                    header("Location:wellWisherprofile.php");
+                    $stmt = $conn->prepare("select owner_id from marvel_well_wisher where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:wellWisherprofile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
+
                     break;
                 case "others":
-                    header("Location:othersProfile.php");
+                    $stmt = $conn->prepare("select owner_id from marvel_others_profile where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:othersProfile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
+
                     break;
                 case "GOK" :
-                    header("Location:govermentofficialProfile.php");
+                    $stmt = $conn->prepare("select owner_id from  goverment_officials where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:govermentofficialProfile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
+
                     break;
                 case "children_homes":
-                    header("Location:othersProfile.htm");
+                    $stmt = $conn->prepare("select owner_id from  marvel_organization_profile where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:organization_profile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
+
                     break;
                 case "clergy" :
-                    header("Location:clergyprofile.php");
+                    $stmt = $conn->prepare("select owner_id from marvel_clergy where owner_id=? ");
+                    $stmt->bind_param("s", $_SESSION["ID"]);
+                    $stmt->execute();
+                    $stmt->bind_result($userid);
+                    $stmt->fetch();
+
+                    echo $stmt->num_rows();
+                    if($userid==null){
+                        header("Location:clergyprofile.php");
+                    }else {
+                        header("Location:verification.php");
+                    }
+                    $stmt->close();
                     break;
                 default:
                     header("Location:index.php");
@@ -58,7 +159,6 @@ echo $user_category;
         }
 
 
-    $stmt->close();
     $conn->close();
 }
 }else{

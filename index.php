@@ -32,21 +32,58 @@ $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 
 // prepare and bind
-$stmt = $conn->prepare("SELECT user_id,user_type FROM marvel_users_auth where user_name=? and user_password=?");
-$stmt->bind_param("ss", $user_name, $password_one);
+$stmt = $conn->prepare("SELECT user_id,user_type,user_password FROM marvel_users_auth where user_name=?");
+$stmt->bind_param("s", $user_name);
  $stmt->execute();
- $stmt->bind_result($user_id,$user_type);
+ $stmt->bind_result($user_id,$user_type,$password);
  $stmt->fetch();
 
- if($user_id!=null){
-     $_SESSION["ID"] = $user_id;
-     if($user_type=="donor") {
-         header("Location:donorHome.php");
-     }else{
-         header("Location:requesterHome.php");
 
-     }
-        
+ if($user_id!=null && $password_one = password_verify($password_one,$password)){
+     $_SESSION["ID"] = $user_id;
+
+    $stmt->close();
+     $stmt = $conn->prepare("SELECT verification_status FROM marvel_verification WHERE user_id=?");
+     $stmt->bind_param("s", $user_id);
+     $stmt->execute();
+     $stmt->bind_result($verification_status);
+     $stmt->fetch();
+
+
+
+
+
+if($verification_status!=null){
+
+    if($verification_status=="VERIFIED"){
+
+    if($user_type=="donor") {
+        header("Location:donorHome.php");
+    }else{
+        header("Location:requesterHome.php");
+
+    }
+    }else if($verification_status="WAITING"){
+
+        header("Location:waiting.html");
+
+
+    }else{
+
+        header("Location:denied.html");
+
+    }
+
+
+
+}else{
+    header("Location:selector.php");
+
+
+
+
+}
+
  }else{
      $user_error='<div class="alert alert-danger alert-dismissible fade show w-100">Wrong username
                        or Password
