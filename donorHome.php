@@ -163,16 +163,6 @@ header("Location:index.php");
             <li class="nav-item">
                 <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <b class="fa fa-mail-bulk"></b>Messaging
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
             </li>
@@ -253,8 +243,7 @@ header("Location:index.php");
                 <span class="fa fa-user-circle"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogout">
-                <a class="dropdown-item" href="#">LogOut</a>
-                <a class="dropdown-item" href="#">Setting</a>
+                <a class="dropdown-item" href="logout.php">LogOut</a>
 
             </div>
         </li>
@@ -269,7 +258,20 @@ header("Location:index.php");
         while ($stmt->fetch()){
 
 
+           $p= strpos($description,"<div>");
+           $shot;
+           if($p==false){
+               $shot = substr($description,0,30).".....";
 
+           }else{
+               strpos($description,"<div>");
+               if($p<33)
+               $shot = substr($description,0,$p-3)."......";
+               else{
+                   $shot = substr($description,0,30).".....";
+               }
+
+           }
 
 
 
@@ -293,16 +295,76 @@ header("Location:index.php");
                         </strong>
                     </div>
                     <div class="row">
-                        <p>
-                            ksdgiueigdfigydguigdiugdigs fdjgicguigiuduifguifgiugfiu
-
-                        </p>
+                        '.$shot.'
 
                     </div>
                     <div class="row al align-content-end">
                         <div class="col-10"></div>
                         <div class="col-2">
-                            <button class="btn btn-outline-success">hisss</button>
+                            <button  role="button" class="btn btn-success mr-5" data-target="#id'.$id.'" data-toggle="modal">View</button>
+        <div class="modal fade" id="id'.$id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header all-color-primary">
+                        <h5 class="modal-title" id="exampleModalLabel">Mnoma</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" method="post">
+                    <div class="modal-body">
+                        <div class="w-100">
+                            <img class="img-fluid" src="'.$img_url.'" height="200px">
+                             <hr>
+                          
+                            <hr>
+                            <div class="form-group mt-1">
+                                <label >Request Title</label>
+                                <input type="text" name="title" class="form-control"  value="'.$title.'" disabled placeholder="eg Request for pads">
+                            </div>
+                            <div class="form-group mt-1" name="category">
+                                <label >Request Category</label>
+                                <select class="custom-select" name="category">
+                                    <option value="sanitary_pads">Sanitary Towels</option>
+                                    <option value="underpants">Under Pants</option>
+
+                                </select>
+                                <small  class="form-text text-muted">select an option above.</small>
+
+                            </div>
+                            <div class="form-group mt-1">
+                                <label>Quantity</label>
+                                <input type="number" class="form-control" name="quantity"  value="'.$quantity.'" disabled  placeholder="eg 10000">
+                                <small  class="form-text text-muted">A rough estimation of the number required.</small>
+                            </div>
+                            <hr>
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <h4 class="form-text text-center">Description</h4>
+                               
+                                </div>
+                                <div class="col-10 d-inline-block">
+                                <div class="w-100" required name="description">
+                                 '.$description.'
+
+                                </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+//                        
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
                         </div>
 
 

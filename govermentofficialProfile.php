@@ -165,16 +165,6 @@ echo "connection error".$conn->error;
             <li class="nav-item active">
                 <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <b class="fa fa-mail-bulk"></b>Messaging
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
             </li>
@@ -189,8 +179,7 @@ echo "connection error".$conn->error;
                 <span class="fa fa-user-circle"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogout">
-                <a class="dropdown-item" href="#">LogOut</a>
-                <a class="dropdown-item" href="#">Setting</a>
+                <a class="dropdown-item" href="logout.php">LogOut</a>
 
             </div>
         </li>
