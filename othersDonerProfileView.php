@@ -1,5 +1,6 @@
-
-<?php session_start() ?>
+<?php
+session_start();
+?>
 <!DOCTYPEhtml>
 <html>
 <head>
@@ -26,32 +27,31 @@ if($_SESSION["ID"]!=null){
     if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
+    if($_SERVER['REQUEST_METHOD']=="GET"){
+        $profile_id = $_SESSION["ID"];
+
+    }else{
+        $profile_id=$_POST["profile_id"];
+    }
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 $stmt = $conn->prepare("select user_name from marvel_users_auth Where user_id=? ");
 $stmt->bind_param("s",$_SESSION['ID']);
-if($_SERVER["REQUEST_METHOD"]=="GET"){
-$userid = $_SESSION["ID"];
-}else{
-$userid=$_POST["profile_id"];
-}
-
-
-if(!$stmt->execute()){
-   echo $stmt->error;
-}
+$stmt->execute();
 $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
 
-    $stmt = $conn->prepare(" select  first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,
-area,description,position_,role from  government_officials
+
+$stmt = $conn->prepare("select first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description,field,role,position_ from marvel_others_profile
  where owner_id=?");
-    $stmt->bind_param("s",$userid);
-    $stmt->execute();
-    $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,
-        $id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$position,$role);
-    $stmt->fetch();
+$stmt->bind_param("s",$profile_id);
+$stmt->execute();
+$stmt->fetch();
+$stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$field,$role,$position);
+
+
+
 
 
 
@@ -78,10 +78,10 @@ header("Location:index.php");
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>
+                <a class="nav-link" href="mydonations.php.php"><b class="fa fa-user-friends"></b>My Requests</a>
             </li>
 
             <li class="nav-item active">
@@ -95,7 +95,7 @@ header("Location:index.php");
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Request</button>
+        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Donate</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -106,23 +106,23 @@ header("Location:index.php");
                         </button>
 
                     </div>
-                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                    <form style="color:black" action="<?php echo $_SERVER["PHP_SELF"]?>" enctype="multipart/form-data" method="post">
                         <div class="modal-body">
                             <div class="w-100">
                                 <img class="img-fluid" src="images/happy1.jpeg" height="200px">
                                 <hr>
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
+                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <hr>
                                 <div class="form-group mt-1">
-                                    <label >Request Title</label>
-                                    <input type="text" name="title" class="form-control"   placeholder="eg Request for pads">
+                                    <label >Donation Title</label>
+                                    <input type="text" class="form-control" name="title" required   placeholder="eg Pads donation">
                                 </div>
                                 <div class="form-group mt-1" name="category">
                                     <label >Request Category</label>
-                                    <select class="custom-select" name="category">
+                                    <select class="custom-select" name="category" required>
                                         <option value="sanitary_pads">Sanitary Towels</option>
                                         <option value="underpants">Under Pants</option>
 
@@ -132,21 +132,23 @@ header("Location:index.php");
                                 </div>
                                 <div class="form-group mt-1">
                                     <label>Quantity</label>
-                                    <input type="number" class="form-control" name="quantity"  placeholder="eg 10000">
+                                    <input type="number" class="form-control" name="quantity" required   placeholder="eg 10000">
                                     <small  class="form-text text-muted">A rough estimation of the number required.</small>
                                 </div>
                                 <hr>
-                                <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <h4 class="form-text text-center">Description</h4>
-                                    </div>
-                                    <div class="col-10 d-inline-block">
+                                <div class="form-group">
                                 <textarea class="form-control align-self-center w-100" required name="description">
 
                                 </textarea>
-                                    </div>
-
                                 </div>
+                                <hr>
+                                <div class="form-group"><label >Application  Procedure</label>
+                                    <textarea class="form-control align-self-center w-100" required name="process">
+
+                                </textarea>
+                                </div>
+
+
 
                             </div>
 
@@ -229,7 +231,7 @@ header("Location:index.php");
                 <div class="col-md-6 col-sm-11 col-lg-6 col-xl-6">
                     <div class="form-group ">
                         <label class="col-form-label form-text">Alternative Email</label>
-                        <input class="form-control align-self-end" type="email" value="<?php echo $alternative_email;?>" name="alternative_email">
+                        <input class="form-control align-self-end" value="<?php echo $alternative_email;?>" type="email" required name="alternative_email">
                     </div>
                 </div>
             </div>
@@ -265,17 +267,24 @@ header("Location:index.php");
                 </div>
 
             </div>
+
             <div class="row justify-content-around">
                 <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
                     <div class="form-group">
-                        <label class="col-form-label form-text">Government position</label>
-                        <input class="form-control " type="text" value="<?php echo $position;?>" required name="position">
+                        <label class="col-form-label form-text">Field</label>
+                        <input class="form-control " type="text" value="<?php echo $field;?>" required name="field">
+                    </div>
+                </div>
+                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-text">Position</label>
+                        <input class="form-control" type="text" required  value="<?php echo $position;?>" name="position">
                     </div>
                 </div>
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password" value="<?php echo $role;?>" required name="role">
+                        <input class="form-control" type="text" value="<?php echo $role;?>" required name="role">
                     </div>
                 </div>
 

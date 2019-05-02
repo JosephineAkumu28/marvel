@@ -63,8 +63,7 @@ if($_SESSION["ID"]!=null){
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-                    $stmt = $conn->prepare("insert into marvel_verification(user_id,file_path,verification_status,user_name)
- values (?,?,?,?)");
+                    $stmt = $conn->prepare("insert into marvel_verification(user_id,file_path,verification_status,user_name)values (?,?,?,?)");
                     $status="PENDING";
                     $stmt->bind_param("ssss",$_SESSION["ID"],$target_file,$status,$username);
                     if($stmt->execute()){
@@ -203,7 +202,7 @@ if($_SESSION["ID"]!=null){
                                 </div>
                                  ";
                         break;
-                    case "others":
+                     case "others":
                         echo " <div class=\"alert alert-success\" role=\"alert\">
                                 <h4 class=\"alert-heading\">OTHERS!</h4>
                                 <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>

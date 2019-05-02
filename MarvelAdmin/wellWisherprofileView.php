@@ -57,8 +57,16 @@ if($_SESSION["ID"]!=null){
         $stmt = $conn->prepare(" select  first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description from marvel_well_wishers  where owner_id=?");
         $stmt->bind_param("s",$profile_id);
         $stmt->execute();
-        $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,
-            $id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
+        $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,$id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
+        $stmt->close();
+
+        $stmt = $conn->prepare("select file_path from marvel_verification Where user_id=? ");
+        $stmt->bind_param("s",$_SESSION['ID']);
+        $stmt->execute();
+        $stmt->bind_result($file_path);
+        $stmt->fetch();
+        $stmt->close();
+
 
 
 
@@ -89,91 +97,11 @@ header("Location:index.php");
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="donorHome.php.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
+            <li class="nav-item  active">
+                <a class="nav-link" href="pendingrequest.php.php"><b class="fa fa-user-friends"></b>Home</a>
             </li>
         </ul>
-        <form class="form-inline mr-5">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Donate</button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header all-color-primary">
-                        <h5 class="modal-title" id="exampleModalLabel">Mnoma</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
 
-                    </div>
-                    <form style="color:black" action="<?php echo $_SERVER["PHP_SELF"]?>" enctype="multipart/form-data" method="post">
-                        <div class="modal-body">
-                            <div class="w-100">
-                                <img class="img-fluid" src="images/happy1.jpeg" height="200px">
-                                <hr>
-                                <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                                <hr>
-                                <div class="form-group mt-1">
-                                    <label >Donation Title</label>
-                                    <input type="text" class="form-control" name="title" required   placeholder="eg Pads donation">
-                                </div>
-                                <div class="form-group mt-1" name="category">
-                                    <label >Request Category</label>
-                                    <select class="custom-select" name="category" required>
-                                        <option value="sanitary_pads">Sanitary Towels</option>
-                                        <option value="underpants">Under Pants</option>
-
-                                    </select>
-                                    <small  class="form-text text-muted">select an option above.</small>
-
-                                </div>
-                                <div class="form-group mt-1">
-                                    <label>Quantity</label>
-                                    <input type="number" class="form-control" name="quantity" required   placeholder="eg 10000">
-                                    <small  class="form-text text-muted">A rough estimation of the number required.</small>
-                                </div>
-                                <hr>
-                                <div class="form-group">
-                                <textarea class="form-control align-self-center w-100" required name="description">
-
-                                </textarea>
-                                </div>
-                                <hr>
-                                <div class="form-group"><label >Application  Procedure</label>
-                                    <textarea class="form-control align-self-center w-100" required name="process">
-
-                                </textarea>
-                                </div>
-
-
-
-                            </div>
-
-
-                        </div>
-                        <div class="modal-footer">
-                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                            <input type="submit" value="submit" class="btn btn-primary">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fa fa-user-circle"></span>
@@ -187,8 +115,8 @@ header("Location:index.php");
 <div  class="container-fluid">
     <div class="row justify-content-center mt-5">
         <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 justify-content-center">
-            <button class="btn btn-outline-success  float-right" data-toggle="popover"
-                    title="verification" data-content="complete profile to verify account" data-placement="left">Verified</button>
+            <a href="<?php echo $file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
+                    title="verification" data-content="complete profile to verify account" data-placement="left">Verified</a>
         </div>
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
@@ -203,7 +131,7 @@ header("Location:index.php");
 
     </div>
     <div class="row mt-5 justify-content-center">
-        <form class="col-sm-12 col-md-10 col-lg-9 col-xl-8 align-self-center" action="<?php echo $_SERVER["PHP_SELF"];?> " method="post" enctype="multipart/form-data">
+        <form class="col-sm-12 col-md-10 col-lg-9 col-xl-8 align-self-center" action="verify.php" method="post" enctype="multipart/form-data">
             <div class="row align-items-center">
 <!--                <div class="custom-file mt-1  col-4 offset-4 ">-->
 <!--                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>-->
@@ -283,19 +211,26 @@ header("Location:index.php");
                 <h4 class="form-text text-center">Description</h4>
                 </div>
                 <div class="col-10">
-             <?php echo $description;?>
+                <textarea class="form-control align-self-center" value="<?php echo $description;?>" required name="description">
 
+                </textarea>
                 </div>
 
             </div>
 
-<!--            <div class="row mt-5 mb-5 justify-content-center">-->
-<!--                <input type="submit" name="submit_profile" value="save" class="btn btn-success">-->
-<!---->
-<!--            </div>-->
+            <div class="row mt-5 mb-5 justify-content-center">
+                <input type="submit" name="submit_profile" value="Verify" class="btn btn-success">
+
+            </div>
 
 
 
+        </form>
+        <form action="deny.php" method="post" enctype="multipart/form-data">
+            <div class="row mt-5 mb-5 justify-content-center">
+                <input type="submit" name="submit" value="Deny" class="btn btn-outline-danger">
+
+            </div>
         </form>
 
 

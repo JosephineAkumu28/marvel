@@ -91,11 +91,76 @@ header("Location:index.php");
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
             </li>
         </ul>
+
         <form class="form-inline mr-5">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <a href="#" role="button" class="btn btn-success mr-5">Request</a>
+        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Request</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header all-color-primary">
+                        <h5 class="modal-title" id="exampleModalLabel">Mnoma</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                        <div class="modal-body">
+                            <div class="w-100">
+                                <img class="img-fluid" src="images/happy1.jpeg" height="200px">
+                                <hr>
+                                <div class="custom-file mt-1">
+                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <hr>
+                                <div class="form-group mt-1">
+                                    <label >Request Title</label>
+                                    <input type="text" name="title" class="form-control"   placeholder="eg Request for pads">
+                                </div>
+                                <div class="form-group mt-1" name="category">
+                                    <label >Request Category</label>
+                                    <select class="custom-select" name="category">
+                                        <option value="sanitary_pads">Sanitary Towels</option>
+                                        <option value="underpants">Under Pants</option>
+
+                                    </select>
+                                    <small  class="form-text text-muted">select an option above.</small>
+
+                                </div>
+                                <div class="form-group mt-1">
+                                    <label>Quantity</label>
+                                    <input type="number" class="form-control" name="quantity"  placeholder="eg 10000">
+                                    <small  class="form-text text-muted">A rough estimation of the number required.</small>
+                                </div>
+                                <hr>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h4 class="form-text text-center">Description</h4>
+                                    </div>
+                                    <div class="col-10 d-inline-block">
+                                <textarea class="form-control align-self-center w-100" required name="description">
+
+                                </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                            <input type="submit" value="submit" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fa fa-user-circle"></span>
@@ -228,9 +293,7 @@ header("Location:index.php");
                 <h4 class="form-text text-center">Description</h4>
                 </div>
                 <div class="col-10">
-                <textarea class="form-control align-self-center" value="<?php echo $description;?>" name="description" required>
-
-                </textarea>
+                <?php echo $description;?>
                 </div>
 
             </div>

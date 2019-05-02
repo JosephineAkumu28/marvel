@@ -44,9 +44,16 @@ if($_SESSION["ID"]!=null){
         $stmt = $conn->prepare("select org_name,portal,address,first_name,middle_name,last_name,phone,alternative_email,img_url from  marvel_organization_profile
          where owner_id = ?");
         $stmt->execute();
-        $stmt->fetch();
         $stmt->bind_result($organization_name,$portal,$address,$fist_name,$middle_name,$last_name,$phone_no,$alternative_email,$target_file);
+        $stmt->fetch();
+        $stmt->close();
 
+        $stmt = $conn->prepare("select file_path from marvel_verification Where user_id=? ");
+        $stmt->bind_param("s",$_SESSION['ID']);
+        $stmt->execute();
+        $stmt->bind_result($file_path);
+        $stmt->fetch();
+        $stmt->close();
 
 
 
@@ -162,86 +169,11 @@ if($_SESSION["ID"]!=null){
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
+            <li class="nav-item  active">
+                <a class="nav-link" href="pendingrequest.php.php"><b class="fa fa-user-friends"></b>Home</a>
             </li>
         </ul>
-        <form class="form-inline mr-5">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Request</button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header all-color-primary">
-                        <h5 class="modal-title" id="exampleModalLabel">Mnoma</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
 
-                    </div>
-                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                        <div class="modal-body">
-                            <div class="w-100">
-                                <img class="img-fluid" src="images/happy1.jpeg" height="200px">
-                                <hr>
-                                <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                                <hr>
-                                <div class="form-group mt-1">
-                                    <label >Request Title</label>
-                                    <input type="text" name="title" class="form-control"   placeholder="eg Request for pads">
-                                </div>
-                                <div class="form-group mt-1" name="category">
-                                    <label >Request Category</label>
-                                    <select class="custom-select" name="category">
-                                        <option value="sanitary_pads">Sanitary Towels</option>
-                                        <option value="underpants">Under Pants</option>
-
-                                    </select>
-                                    <small  class="form-text text-muted">select an option above.</small>
-
-                                </div>
-                                <div class="form-group mt-1">
-                                    <label>Quantity</label>
-                                    <input type="number" class="form-control" name="quantity"  placeholder="eg 10000">
-                                    <small  class="form-text text-muted">A rough estimation of the number required.</small>
-                                </div>
-                                <hr>
-                                <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <h4 class="form-text text-center">Description</h4>
-                                    </div>
-                                    <div class="col-10 d-inline-block">
-                                <textarea class="form-control align-self-center w-100" required name="description">
-
-                                </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                        <div class="modal-footer">
-                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                            <input type="submit" value="submit" class="btn btn-primary">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fa fa-user-circle"></span>
@@ -255,8 +187,8 @@ if($_SESSION["ID"]!=null){
 <div class="container-fluid">
     <div class="row justify-content-center mt-5">
         <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 justify-content-center">
-            <button class="btn btn-outline-success  float-right" data-toggle="popover"
-                    title="verification" data-content="complete profile to verify account" data-placement="left">Verified</button>
+            <a href="<?php echo $file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
+               title="verification" data-content="complete profile to verify account" data-placement="left">Verified</a>
         </div>
         <div class="w-100"></div>
         <div class="col-6  justify-content-center">
@@ -279,7 +211,7 @@ if($_SESSION["ID"]!=null){
 
     </div>
     <div class="row mt-5 justify-content-center">
-        <form class="col-sm-12 col-md-10 col-lg-9 col-xl-8 align-self-center" action="<?php echo $_SERVER["PHP_SELF"];?> " method="post" enctype="multipart/form-data">
+        <form class="col-sm-12 col-md-10 col-lg-9 col-xl-8 align-self-center" action="verify.php " method="post" enctype="multipart/form-data">
 
         <div class="row align-items-center">
 <!--            <div class="custom-file mt-1  col-4 offset-4 ">-->
@@ -383,7 +315,7 @@ if($_SESSION["ID"]!=null){
             <div class="col-12">
                 <div class="form-group ">
                     <label class="col-form-label form-text">Alternative Email</label>
-                    <?php echo $alternative_email;?>
+                    <input class="form-control align-self-end" value="<?php echo $alternative_email;?>" type="email" name="alternative_email">
 
                 </div>
 
@@ -391,16 +323,21 @@ if($_SESSION["ID"]!=null){
 
         </div>
 
-<!--        <div class="row mt-5 mb-5 justify-content-center">-->
-<!--            <input type="submit" name="submit" value="save" class="btn btn-success">-->
-<!---->
-<!--        </div>-->
+        <div class="row mt-5 mb-5 justify-content-center">
+            <input type="submit" name="submit" value="Verify" class="btn btn-success">
+
+        </div>
     </div>
 
 
 
     </form>
+    <form action="deny.php" method="post" enctype="multipart/form-data">
+        <div class="row mt-5 mb-5 justify-content-center">
+            <input type="submit" name="submit" value="Deny" class="btn btn-outline-danger">
 
+        </div>
+    </form>
 
 </div>
 

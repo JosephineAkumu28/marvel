@@ -29,11 +29,8 @@ $_SESSION['ID']=100;
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item  active">
-                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>Pending Requests</a>
+                <a class="nav-link" href="pendingrequest.php.php"><b class="fa fa-user-friends"></b>Home</a>
             </li>
         </ul>
 
@@ -93,7 +90,7 @@ if($_SESSION["ID"]!=null){
                     <div class="row al align-content-end">
                         <div class="col-10"></div>
                         <div class="col-2">
-                        <form class="form-inline" method="post" action="selector.php">
+                        <form class="form-inline" method="post" action="selectorView.php">
                             <input class="d-none" type="text" value='.$user_id.' name="id">
                             <input class="btn btn-success" type="submit"  name="details" value="check">
                         </form>

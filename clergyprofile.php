@@ -154,37 +154,37 @@ header("Location:index.php");
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
-            </li>
-        </ul>
-        <form class="form-inline mr-5">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <a href="#" role="button" class="btn btn-success mr-5">Request</a>
-        <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="fa fa-user-circle"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogout">
-                <a class="dropdown-item" href="logout.php">LogOut</a>
-
-            </div>
-        </li>
-    </div>
+<!--    <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+<!--        <ul class="navbar-nav mr-auto">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="myrequest.php"><b class="fa fa-user-friends"></b>My Requests</a>-->
+<!--            </li>-->
+<!---->
+<!--            <li class="nav-item active">-->
+<!--                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <form class="form-inline mr-5">-->
+<!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--        </form>-->
+<!--        <a href="#" role="button" class="btn btn-success mr-5">Request</a>-->
+<!--        <li class="nav-item dropdown ">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                <span class="fa fa-user-circle"></span>-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogout">-->
+<!--                <a class="dropdown-item" href="logout.php">LogOut</a>-->
+<!---->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </div>-->
 </nav>
 <div  class="container-fluid">
     <div class="row justify-content-center mt-5">
@@ -327,6 +327,9 @@ header("Location:index.php");
 
 
 </div>
+<script>
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+</script
 
 </body>
 </html>

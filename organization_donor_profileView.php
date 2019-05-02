@@ -9,16 +9,16 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/all.css" rel="stylesheet" type="text/css">
-    <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="MarvelAdmin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="MarvelAdmin/css/all.css" rel="stylesheet" type="text/css">
+    <link href="MarvelAdmin/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="js/all.js"></script>
-<script src="fontawesome/js/all.min.js"></script>
-<script src="js/nicEdit.js"></script>
+<script src="MarvelAdmin/js/jquery-3.3.1.min.js"></script>
+<script src="MarvelAdmin/bootstrap/js/bootstrap.min.js"></script>
+<script src="MarvelAdmin/js/all.js"></script>
+<script src="MarvelAdmin/fontawesome/js/all.min.js"></script>
+<script src="MarvelAdmin/js/nicEdit.js"></script>
 <?php
 if($_SESSION["ID"]!=null){
     $servername = "localhost";
@@ -155,7 +155,7 @@ if($_SESSION["ID"]!=null){
 
 
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
+    <a class="navbar-brand" href="#"> <img src="MarvelAdmin/images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -163,11 +163,15 @@ if($_SESSION["ID"]!=null){
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>Profile</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="selectorView.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>
@@ -177,7 +181,7 @@ if($_SESSION["ID"]!=null){
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Request</button>
+        <button  role="button" class="btn btn-success mr-5" data-target="#exampleModal" data-toggle="modal">Donate</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -188,23 +192,23 @@ if($_SESSION["ID"]!=null){
                         </button>
 
                     </div>
-                    <form style="color:black " class="container-fluid" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                    <form style="color:black" action="<?php echo $_SERVER["PHP_SELF"]?>" enctype="multipart/form-data" method="post">
                         <div class="modal-body">
                             <div class="w-100">
                                 <img class="img-fluid" src="images/happy1.jpeg" height="200px">
                                 <hr>
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
+                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <hr>
                                 <div class="form-group mt-1">
-                                    <label >Request Title</label>
-                                    <input type="text" name="title" class="form-control"   placeholder="eg Request for pads">
+                                    <label >Donation Title</label>
+                                    <input type="text" class="form-control" name="title" required   placeholder="eg Pads donation">
                                 </div>
                                 <div class="form-group mt-1" name="category">
                                     <label >Request Category</label>
-                                    <select class="custom-select" name="category">
+                                    <select class="custom-select" name="category" required>
                                         <option value="sanitary_pads">Sanitary Towels</option>
                                         <option value="underpants">Under Pants</option>
 
@@ -214,21 +218,23 @@ if($_SESSION["ID"]!=null){
                                 </div>
                                 <div class="form-group mt-1">
                                     <label>Quantity</label>
-                                    <input type="number" class="form-control" name="quantity"  placeholder="eg 10000">
+                                    <input type="number" class="form-control" name="quantity" required   placeholder="eg 10000">
                                     <small  class="form-text text-muted">A rough estimation of the number required.</small>
                                 </div>
                                 <hr>
-                                <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <h4 class="form-text text-center">Description</h4>
-                                    </div>
-                                    <div class="col-10 d-inline-block">
+                                <div class="form-group">
                                 <textarea class="form-control align-self-center w-100" required name="description">
 
                                 </textarea>
-                                    </div>
-
                                 </div>
+                                <hr>
+                                <div class="form-group"><label >Application  Procedure</label>
+                                    <textarea class="form-control align-self-center w-100" required name="process">
+
+                                </textarea>
+                                </div>
+
+
 
                             </div>
 
@@ -247,7 +253,7 @@ if($_SESSION["ID"]!=null){
                 <span class="fa fa-user-circle"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogout">
-                <a class="dropdown-item" href="logout.php">LogOut</a>
+                <a class="dropdown-item" href="MarvelAdmin/logout.php">LogOut</a>
             </div>
         </li>
     </div>
