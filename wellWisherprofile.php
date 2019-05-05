@@ -58,7 +58,7 @@ if($_SESSION["ID"]!=null){
                 $description = $_POST["description"];
 
             $target_dir = "uploads/";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $target_file = $target_dir . rand(0,1000000).basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -202,7 +202,7 @@ header("Location:index.php");
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="images/add_image.png" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 
@@ -291,11 +291,9 @@ header("Location:index.php");
                 <div class="col-12">
                 <h4 class="form-text text-center">Description</h4>
                 </div>
-                <div class="col-10">
                 <textarea class="form-control align-self-center" required name="description">
 
-                </textarea>
-                </div>
+                </textarea>>
 
             </div>
             <div class="row mt-5 mb-5 justify-content-center">

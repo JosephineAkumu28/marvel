@@ -12,6 +12,7 @@
 <script src="bootstrap/js/bootstrap.min.js"> </script>
 <script src="js/all.js"></script>
 <script src="fontawesome/js/all.min.js"></script>
+<script src="js/nicEdit.js"></script>
 
 <?php
 if($_SESSION["ID"]!=null){
@@ -52,6 +53,86 @@ area,description,position_,role from  government_officials
     $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,
         $id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$position,$role);
     $stmt->fetch();
+    $stmt->close();
+
+    if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
+        $title = $_POST["title"];
+        $category = $_POST["category"];
+        $quantity = $_POST["quantity"];
+        $description = $_POST["description"];
+        $img_url = "ddd";
+        $target_dir = "uploads/";
+        $target_file = $target_dir . rand(0,1000000).basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+        if(isset($_POST["submit"])) {
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
+            }
+        }
+// Check if file already exists
+        if (file_exists($target_file)) {
+            echo "Sorry, file already exists.";
+            $uploadOk = 0;
+        }
+// Check file size
+        if ($_FILES["fileToUpload"]["size"] > 5000000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+// Allow certain file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+// Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                $stmt = $conn->prepare("insert into marvel_request_table (title,img_url,category,quantity,description,owner_id)
+values (?,?,?,?,?,?)");
+                $stmt->bind_param("sssiss",$title,$target_file,$category,$quantity,$description,$_SESSION["ID"]);
+                if($stmt->execute()){
+                    header("Location:myrequest.php");
+
+
+                }else{
+                    echo $stmt->error;
+                }
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }elseif ($username!=null){
+
+
+
+
+    }else{
+        header("Location:index.php");
+
+    }
 
 
 
@@ -303,6 +384,8 @@ header("Location:index.php");
 
 
 </div>
-
+<script>
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+</script>
 </body>
 </html>

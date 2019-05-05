@@ -100,13 +100,13 @@ header("Location:index.php");
 <div  class="container-fluid">
     <div class="row justify-content-center mt-5">
         <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 justify-content-center">
-            <a href="<?php echo $file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
+            <a href="<?php echo '../'.$file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
                title="verification" data-content="complete profile to verify account" data-placement="left">Verified</a>
         </div>
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="<?php echo $img_url;?>" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="<?php  echo '../'.$img_url;?>" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 

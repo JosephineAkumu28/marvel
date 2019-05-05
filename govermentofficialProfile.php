@@ -12,6 +12,7 @@
 <script src="bootstrap/js/bootstrap.min.js"> </script>
 <script src="js/all.js"></script>
 <script src="fontawesome/js/all.min.js"></script>
+<script src="js/nicEdit.js"></script>
 
 <?php
 if($_SESSION["ID"]!=null){
@@ -51,7 +52,7 @@ $role = $_POST["role"];
 $position =$_POST["position"];
 
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . rand(0,1000000).basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -195,7 +196,7 @@ echo "connection error".$conn->error;
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="images/happy1.jpeg" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="images/images/add_image.png" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 
@@ -299,11 +300,11 @@ echo "connection error".$conn->error;
                 <div class="col-12">
                 <h4 class="form-text text-center">Description</h4>
                 </div>
-                <div class="col-10">
-                <textarea class="form-control align-self-center" required name="description">
+
+                <textarea class="form-control " width="100" required name="description">
 
                 </textarea>
-                </div>
+
 
             </div>
             <div class="row mt-5 mb-5 justify-content-center">

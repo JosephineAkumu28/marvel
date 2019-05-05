@@ -29,28 +29,6 @@ if($_SESSION["ID"]!=null){
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-//            if(isset($_POST["submit"])) {
-//                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//                if($check !== false) {
-//                    echo "File is an image - " . $check["mime"] . ".";
-//                    $uploadOk = 1;
-//                } else {
-//                    echo "File is not an image.";
-//                    $uploadOk = 0;
-//                }
-//            }
-// Check if file already exists
-//            if (file_exists($target_file)) {
-//                echo "Sorry, file already exists.";
-//                $uploadOk = 0;
-//            }
-// Check file size
-//            if ($_FILES["fileToUpload"]["size"] > 500000) {
-//                echo "Sorry, your file is too large.";
-//                $uploadOk = 0;
-//            }
-// Allow certain file formats
             if($imageFileType != "7z" && $imageFileType != "zip" && $imageFileType != "Rar"
                 ) {
                 echo "Sorry, only 7z, zip, Rar  files are allowed.";
@@ -231,7 +209,7 @@ if($_SESSION["ID"]!=null){
                         break;
                     case "clergy" :
                         echo " <div class=\"alert alert-success\" role=\"alert\">
-                                <h4 class=\"alert-heading\">CHILDREN HOMES!</h4>
+                                <h4 class=\"alert-heading\"> ClERGY!</h4>
                                 <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
                                 <hr>
                                 <p class=\"mb-0\">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>

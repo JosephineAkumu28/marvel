@@ -55,7 +55,7 @@ if($_SESSION["ID"]!=null){
           $address = $_POST["address"];
 
             $target_dir = "uploads/";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $target_file = $target_dir . rand(0,1000000).basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -153,34 +153,6 @@ if($_SESSION["ID"]!=null){
         <span class="navbar-toggler-icon"></span>
     </button>
 
-<!--    <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
-<!--        <ul class="navbar-nav mr-auto">-->
-<!--            <li class="nav-item active">-->
-<!--                <a class="nav-link" href="#"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>-->
-<!--            </li>-->
-<!---->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--        <form class="form-inline mr-5">-->
-<!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--        </form>-->
-<!--        <a href="#" role="button" class="btn btn-success mr-5">Request</a>-->
-<!--        <li class="nav-item dropdown ">-->
-<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                <span class="fa fa-user-circle"></span>-->
-<!--            </a>-->
-<!--            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogout">-->
-<!--                <a class="dropdown-item" href="logout.php">LogOut</a>-->
-<!---->
-<!--            </div>-->
-<!--        </li>-->
-<!--    </div>-->
 </nav>
 <div class="container-fluid">
     <div class="row justify-content-center mt-5">
@@ -192,7 +164,7 @@ if($_SESSION["ID"]!=null){
         <div class="w-100"></div>
         <div class="col-6  justify-content-center">
             <div class="justify-content-start d-flex">
-                <img src="images/happy1.jpeg" class="mt-5 shadow-lg mr-1  " width="200" height="100">
+                <img src="images/add_image.png" class="mt-5 shadow-lg mr-1  " width="200" height="100">
 
                 <p class="mt-5 ml-2">
                    + Add your organization logo here
@@ -248,27 +220,6 @@ if($_SESSION["ID"]!=null){
                     <input class="form-control " type="text" required name="address">
                 </div>
             </div>
-<!--            <div class="row justify-content-around">-->
-<!--                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">-->
-<!--                    <div class="form-group">-->
-<!--                        <label class="col-form-label form-text">County</label>-->
-<!--                        <input class="form-control " type="text" required name="county">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3">-->
-<!--                    <div class="form-group">-->
-<!--                        <label class="col-form-label form-text">Region</label>-->
-<!--                        <input class="form-control" type="text" required name="region">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">-->
-<!--                    <div class="form-group">-->
-<!--                        <label class="col-form-label form-text">Area</label>-->
-<!--                        <input class="form-control" type="text" required name="area">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
             <div class="col-12">
 
                <p class="text-center all-color-primary">

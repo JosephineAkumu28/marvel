@@ -101,8 +101,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div class="col-12 mb-2 mt-2" >
                     <h4 class="text-center" >SIGN UP</h4>
                 </div>
-                <div class="col-6" style="background-color: green">
-                    <img src="images/happy1.jpeg" class="img-fluid">
+                <div class="col-6" style="background: url(images/annie-spratt-427337-unsplash.jpg);background-clip: border-box;background-size:cover;background-repeat: no-repeat"
+                    <img src="images/annie-spratt-427337-unsplash.jpg" class="card-img-top w-100">
 
                 </div>
                 <div class="col-5 align-content-center mr-4">

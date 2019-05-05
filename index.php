@@ -123,7 +123,7 @@ echo $conn->error;
 
         <div class="mt-5 col-sm-10 col-md-7 col-lg-5 col-xl-4">
             <div class="card shadow-lg ">
-                <img class="card-img-top" src="images/happy1.jpeg" alt="sign up image">
+                <img class="card-img-top" src="images/happy1.jpg" alt="sign up image">
                 <form method="post" enctype="multipart/form-data"   action="<?php echo $_SERVER['PHP_SELF'] ?>" >
                 <div class="card-body">
                     <h4 class="card-title ">LOG IN</h4>

@@ -9,6 +9,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/all.css" rel="stylesheet" type="text/css">
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <script src="js/nicEdit.js"></script>
 
 </head>
 <?php
