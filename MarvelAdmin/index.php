@@ -30,7 +30,7 @@ $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 
 // prepare and bind
-$stmt = $conn->prepare("SELECT id,user_name,user_password FROM marvel_admin where user_name=? and password=?");
+$stmt = $conn->prepare("SELECT id,user_name,password FROM marvel_admin where user_name=? and password=?");
 $stmt->bind_param("ss", $user_name,$password_one);
  $stmt->execute();
  $stmt->bind_result($user_id,$user_name,$password);
