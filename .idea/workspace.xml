@@ -95,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MarvelAdmin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="351">
+              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding>
                 <element signature="e#241#248#1" expanded="true" />
               </folding>
@@ -307,12 +307,12 @@
       <workItem from="1556740997304" duration="42000" />
       <workItem from="1556745645043" duration="13889000" />
       <workItem from="1557091371954" duration="14949000" />
-      <workItem from="1557172824756" duration="4039000" />
+      <workItem from="1557172824756" duration="4346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214053000" />
+    <option name="totallyTimeSpent" value="214360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -653,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        <state relative-caret-position="351">
+          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
           <folding>
             <element signature="e#241#248#1" expanded="true" />
           </folding>

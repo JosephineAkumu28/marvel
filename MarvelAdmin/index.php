@@ -40,7 +40,7 @@ $stmt->bind_param("ss", $user_name,$password_one);
  if($user_id!=null){
      $_SESSION["Admin_ID"] = $user_id;
 
-      header("Location:penedingrequest.php");
+      header("Location:pendingrequest.php");
 
 
 
