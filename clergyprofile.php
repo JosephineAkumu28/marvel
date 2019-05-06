@@ -298,7 +298,7 @@ header("Location:index.php");
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password" name="role" required>
+                        <input class="form-control" type="text" name="role" required>
                     </div>
                 </div>
 

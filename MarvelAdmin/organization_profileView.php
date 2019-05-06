@@ -43,6 +43,7 @@ if($_SESSION["ID"]!=null){
 
         $stmt = $conn->prepare("select org_name,portal,address,first_name,middle_name,last_name,phone,alternative_email,img_url from  marvel_organization_profile
          where owner_id = ?");
+        $stmt->bind_param("s",$_SESSION['ID']);
         $stmt->execute();
         $stmt->bind_result($organization_name,$portal,$address,$fist_name,$middle_name,$last_name,$phone_no,$alternative_email,$target_file);
         $stmt->fetch();
@@ -58,89 +59,7 @@ if($_SESSION["ID"]!=null){
 
 
 
-//        if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
-//            $fist_name = $_POST["first_name"];
-//            $middle_name=  $_POST["middle_name"];
-//            $last_name =  $_POST["last_name"];
-//            $alternative_email = $_POST["alternative_email"];
-//            $phone_no =  $_POST["phone_no"];
-//          $organization_name = $_POST["org_name"];
-//          $portal = $_POST["portal_name"];
-//          $address = $_POST["address"];
 //
-//            $target_dir = "uploads/";
-//            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-//            $uploadOk = 1;
-//            $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-//// Check if image file is a actual image or fake image
-//            if(isset($_POST["submit"])) {
-//                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//                if($check !== false) {
-//                    echo "File is an image - " . $check["mime"] . ".";
-//                    $uploadOk = 1;
-//                } else {
-//                    echo "File is not an image.";
-//                    $uploadOk = 0;
-//                }
-//            }
-//// Check if file already exists
-//            if (file_exists($target_file)) {
-//                echo "Sorry, file already exists.";
-//                $uploadOk = 0;
-//            }
-//// Check file size
-//            if ($_FILES["fileToUpload"]["size"] > 500000) {
-//                echo "Sorry, your file is too large.";
-//                $uploadOk = 0;
-//            }
-//// Allow certain file formats
-//            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-//                && $imageFileType != "gif" ) {
-//                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-//                $uploadOk = 0;
-//            }
-//// Check if $uploadOk is set to 0 by an error
-//            if ($uploadOk == 0) {
-//                echo "Sorry, your file was not uploaded.";
-//// if everything is ok, try to upload file
-//            } else {
-//                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-//                    $stmt = $conn->prepare("insert into marvel_organization_profile (org_name,portal,address,first_name,middle_name,last_name,phone,alternative_email,img_url,owner_id)
-// values (?,?,?,?,?,?,?,?,?,?)");
-//                    $stmt->bind_param("ssssssisss",$organization_name,$portal,$address,$fist_name,$middle_name,$last_name,$phone_no,$alternative_email,$target_file,$_SESSION["ID"]);
-//                    if($stmt->execute()){
-//                        header("Location:verification.php");
-//
-//
-//                    }else{
-//                        echo $stmt->error;
-//                    }
-//                } else {
-//                    echo "Sorry, there was an error uploading your file.";
-//                }
-//            }
-
-
-
-
-
-
-
-
-
-
-
-
-//        }elseif($username!=null){
-//
-//
-//
-//
-//        }else{
-//            header("Location:index.php");
-//        }
-
-
 
 
 
@@ -187,13 +106,13 @@ if($_SESSION["ID"]!=null){
 <div class="container-fluid">
     <div class="row justify-content-center mt-5">
         <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 justify-content-center">
-            <a href="<?php echo $file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
-               title="verification" data-content="complete profile to verify account" data-placement="left">Verified</a>
+            <a href="<?php echo '../'.$file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
+               title="verification" data-content="complete profile to verify account" data-placement="left">Download Verification Documents</a>
         </div>
         <div class="w-100"></div>
         <div class="col-6  justify-content-center">
             <div class="justify-content-start d-flex">
-                <img src="<?php echo $target_file;?>" class="mt-5 shadow-lg mr-1  " width="200" height="100">
+                <img src="<?php  echo '../'.$target_file;?>" class="mt-5 shadow-lg mr-1  " width="200" height="100">
 
                 <p class="mt-5 ml-2">
                    + Add your organization logo here
@@ -332,7 +251,7 @@ if($_SESSION["ID"]!=null){
 
 
     </form>
-    <form action="deny.php" method="post" enctype="multipart/form-data">
+    <form class="w-100 align-items-center" action="deny.php" method="post" enctype="multipart/form-data">
         <div class="row mt-5 mb-5 justify-content-center">
             <input type="submit" name="submit" value="Deny" class="btn btn-outline-danger">
 

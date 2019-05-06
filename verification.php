@@ -26,7 +26,7 @@ if($_SESSION["ID"]!=null){
         if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 
             $target_dir = "uploads/";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $target_file = $target_dir .rand(0,1000000). basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
             if($imageFileType != "7z" && $imageFileType != "zip" && $imageFileType != "Rar"
@@ -45,7 +45,7 @@ if($_SESSION["ID"]!=null){
                     $status="PENDING";
                     $stmt->bind_param("ssss",$_SESSION["ID"],$target_file,$status,$username);
                     if($stmt->execute()){
-                        header("Location:verification.php");
+                        header("Location:Waiting.html");
 
 
 

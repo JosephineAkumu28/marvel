@@ -378,11 +378,6 @@ header("Location:index.php");
                 </div>
 
             </div>
-<!--            <div class="row mt-5 mb-5 justify-content-center">-->
-<!--                <input type="submit" name="submit" value="save" class="btn btn-success">-->
-<!---->
-<!--            </div>-->
-
 
 
         </form>

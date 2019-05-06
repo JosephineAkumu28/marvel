@@ -135,7 +135,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label form-text" >Confirm Password</label>
-                                <input class="form-control" type="password_one" name="password_two">
+                                <input class="form-control" type="password" name="password_two">
 
                             </div>
                             <input tabindex="-1" class="d-none" type="text" name="usr" value="request">

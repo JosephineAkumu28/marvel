@@ -291,7 +291,7 @@ echo "connection error".$conn->error;
                 <div class="col-sm-11 col-md-11 col-lg-3 col-xl-3">
                     <div class="form-group">
                         <label class="col-form-label form-text">Role</label>
-                        <input class="form-control" type="password" required name="role">
+                        <input class="form-control" type="text" required name="role">
                     </div>
                 </div>
 

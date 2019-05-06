@@ -22,7 +22,7 @@ $_SESSION['ID']=100;
 <script src="js/jquery-3.3.1.min.js"> </script>
 <script src="bootstrap/js/bootstrap.min.js"> </script>
 <nav class="navbar navbar-expand-lg all-color-primary navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="images/happy1.jpeg" width="50" height="50">Marvel Donations</a>
+    <a class="navbar-brand" href="#"> <img src="../images/happy1.jpeg" width="50" height="50">Marvel Donations Verififation</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -71,12 +71,12 @@ if($_SESSION["ID"]!=null){
         <div class="row  mt-3 ">
         <div class="col-12 bg-light mt-2 ">
             <div class="row justify-content-between">
-                <div class="col-4 pr-3 pl-0">
-                    <img src="images/happy1.jpeg" class="card-img-top" height="180">
+                <div class="col-2 pr-3 pl-0">
+                    <img src="images/user.png" height="100" width="100" >
 
                 </div>
-                <div class="col-8">
-                    <div class="row justify-content-between pl-1">
+                <div class="col-10 align-items-center">
+                    <div class="row justify-content-between pl-1 pt-3">
                         <h5>'.$user_name.'</h5>
                         <small class="small text-muted">'.$reg_date.'</small>
                     </div>

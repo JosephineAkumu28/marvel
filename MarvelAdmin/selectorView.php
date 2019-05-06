@@ -76,7 +76,7 @@ if($conn->query($sql)===TRUE) {
 
                     break;
                 case "well_wisher":
-                    $stmt = $conn->prepare("select owner_id from marvel_well_wisher where owner_id=? ");
+                    $stmt = $conn->prepare("select owner_id from marvel_well_wishers where owner_id=? ");
                     $stmt->bind_param("s", $_SESSION["ID"]);
                     $stmt->execute();
                     $stmt->bind_result($userid);
@@ -108,7 +108,7 @@ if($conn->query($sql)===TRUE) {
 
                     break;
                 case "GOK" :
-                    $stmt = $conn->prepare("select owner_id from  goverment_officials where owner_id=? ");
+                    $stmt = $conn->prepare("select owner_id from  government_officials where owner_id=? ");
                     $stmt->bind_param("s", $_SESSION["ID"]);
                     $stmt->execute();
                     $stmt->bind_result($userid);

@@ -55,9 +55,10 @@ if($_SESSION["ID"]!=null){
         $stmt->close();
 
         $stmt = $conn->prepare(" select  first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description from marvel_well_wishers  where owner_id=?");
-        $stmt->bind_param("s",$profile_id);
+        $stmt->bind_param("s",$_SESSION["ID"]);
         $stmt->execute();
         $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,$id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
+        $stmt->fetch();
         $stmt->close();
 
         $stmt = $conn->prepare("select file_path from marvel_verification Where user_id=? ");
@@ -115,13 +116,13 @@ header("Location:index.php");
 <div  class="container-fluid">
     <div class="row justify-content-center mt-5">
         <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 justify-content-center">
-            <a href="<?php echo $file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
-                    title="verification" data-content="complete profile to verify account" data-placement="left">Verified</a>
+            <a href="<?php echo '../'.$file_path;?>" class="btn btn-outline-success  float-right" data-toggle="popover"
+                    title="verification" data-content="complete profile to verify account" data-placement="left">Download Verification Documents</a>
         </div>
         <div class="w-100"></div>
         <div class="col-4  justify-content-center">
             <div class="justify-content-center d-flex">
-            <img src="<?php echo $target_file;?>" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
+            <img src="<?php  echo '../'.$target_file;?>" class="rounded rounded-circle img mt-5 shadow-lg" width="300" height="300">
             </div>
 
 
@@ -210,11 +211,8 @@ header("Location:index.php");
                 <div class="col-12">
                 <h4 class="form-text text-center">Description</h4>
                 </div>
-                <div class="col-10">
-                <textarea class="form-control align-self-center" value="<?php echo $description;?>" required name="description">
+                <?php echo $description;?>
 
-                </textarea>
-                </div>
 
             </div>
 
@@ -226,7 +224,7 @@ header("Location:index.php");
 
 
         </form>
-        <form action="deny.php" method="post" enctype="multipart/form-data">
+        <form class="w-100 align-items-center" action="deny.php" method="post" enctype="multipart/form-data">
             <div class="row mt-5 mb-5 justify-content-center">
                 <input type="submit" name="submit" value="Deny" class="btn btn-outline-danger">
 
