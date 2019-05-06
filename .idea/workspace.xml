@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MarvelAdmin/clergyprofileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/MarvelAdmin/clergyprofileView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarvelAdmin/govermentofficialProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/MarvelAdmin/govermentofficialProfileView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarvelAdmin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/MarvelAdmin/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -204,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -309,15 +305,15 @@
       <workItem from="1556740997304" duration="42000" />
       <workItem from="1556745645043" duration="13889000" />
       <workItem from="1557091371954" duration="14949000" />
-      <workItem from="1557172824756" duration="3423000" />
+      <workItem from="1557172824756" duration="3724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213437000" />
+    <option name="totallyTimeSpent" value="213738000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15191898" />
