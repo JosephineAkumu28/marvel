@@ -45,7 +45,7 @@ $stmt->fetch();
 $stmt->close();
 
 $stmt = $conn->prepare(" select  first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description,position_,role from  government_officials where owner_id=?");
-$stmt->bind_param("s",$userid);
+$stmt->bind_param("s",$_SESSION['ID']);
 $stmt->execute();
 $stmt->fetch();
 $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$position,$role);
