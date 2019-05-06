@@ -37,7 +37,7 @@ die("Connection failed: " . $conn->connect_error);
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 $stmt = $conn->prepare("select user_name from marvel_users_auth Where user_id=? ");
-$stmt->bind_param("s",$profile_id);
+$stmt->bind_param("s",$_SESSION['ID']);
 $stmt->execute();
 $stmt->bind_result($username);
 $stmt->fetch();

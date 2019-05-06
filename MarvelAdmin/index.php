@@ -30,72 +30,38 @@ $sql ="use marvel_database";
 if($conn->query($sql)===TRUE){
 
 // prepare and bind
-$stmt = $conn->prepare("SELECT user_id,user_type,user_password FROM marvel_users_auth where user_name=?");
-$stmt->bind_param("s", $user_name);
+$stmt = $conn->prepare("SELECT id,user_name,user_password FROM marvel_admin where user_name=? and password=?");
+$stmt->bind_param("ss", $user_name,$password_one);
  $stmt->execute();
- $stmt->bind_result($user_id,$user_type,$password);
+ $stmt->bind_result($user_id,$user_name,$password);
  $stmt->fetch();
 
 
- if($user_id!=null && $password_one = password_verify($password_one,$password)){
-     $_SESSION["ID"] = $user_id;
+ if($user_id!=null){
+     $_SESSION["Admin_ID"] = $user_id;
 
-    $stmt->close();
-     $stmt = $conn->prepare("SELECT verification_status FROM marvel_verification WHERE user_id=?");
-     $stmt->bind_param("s", $user_id);
-     $stmt->execute();
-     $stmt->bind_result($verification_status);
-     $stmt->fetch();
-
-
-
-
-
-if($verification_status!=null){
-
-    if($verification_status=="verified"){
-
-    if($user_type=="donor") {
-        header("Location:donorHome.php");
-    }else{
-        header("Location:requesterHome.php");
-
-    }
-    }else if($verification_status="waiting"){
-
-        header("Location:waiting.html");
-
-
-    }else{
-
-        header("Location:denied.html");
-
-    }
+      header("Location:penedingrequest.php");
 
 
 
 }else{
-    header("Location:selector.php");
 
-
-
-
-}
-
- }else{
-     $user_error='<div class="alert alert-danger alert-dismissible fade show w-100">Wrong username
+    $user_error='<div class="alert alert-danger alert-dismissible fade show w-100">Wrong username
                        or Password
                         <button class="close" role="button" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
                     </div>';
      echo $user_error;
+
+}
+    $stmt->close();
+    $conn->close();
+
+
  }
   
 // set parameters and execute
 
-
-$stmt->close();
-$conn->close();
-}else{
+else{
 echo $conn->error;
 }
 
@@ -115,13 +81,11 @@ echo $conn->error;
 
 <div class="container">
     <div class="row  d-flex justify-content-center">
-        <!--<div class="col-lg-4 col-md-3 col-sm-2 col-12 col-xl-5">-->
 
-        <!--</div>-->
 
         <div class="mt-5 col-sm-10 col-md-7 col-lg-5 col-xl-4">
             <div class="card shadow-lg mt-5 ">
-<!--                <img class="card-img-top" src="images/happy1.jpeg" alt="sign up image">-->
+
                 <form method="post" enctype="multipart/form-data"   action="<?php echo $_SERVER['PHP_SELF'] ?>" >
                 <div class="card-body">
                     <h4 class="card-title ">LOG IN</h4>
