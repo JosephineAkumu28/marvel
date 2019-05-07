@@ -184,8 +184,8 @@ header("Location:index.php");
                     </div>
                     <form style="color:black" action="<?php echo $_SERVER["PHP_SELF"]?>" enctype="multipart/form-data" method="post">
                         <div class="modal-body">
-                            <div class="w-100">
-                                <img class="img-fluid" src="images/happy1.jpeg" height="200px">
+                            <div class="w-100 align-items-center">
+                                <img  src="images/happy1.jpeg" height="100px">
                                 <hr>
                                 <div class="custom-file mt-1">
                                     <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
@@ -301,8 +301,8 @@ header("Location:index.php");
                         <div class="col-10"></div>
                         <div class="col-2">
                         <form class="form-inline" action="deleteRequest.php" method="post" enctype="multipart/form-data">
-                            <input class="d-none" value="'.$id.'">
-                            <input class="btn btn-outline-danger" name="request_id" value="Delete">
+                            <input class="d-none" name="request_id" value="'.$id.'">
+                            <input class="btn btn-outline-danger"  value="Delete">
                          </form>
                         </div>
 
