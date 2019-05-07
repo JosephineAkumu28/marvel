@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/organization_donor_profileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/organization_donor_profileView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/organization_profileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/organization_profileView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/othersDonerProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/othersDonerProfileView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/othersProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/othersProfileView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selectorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/selectorView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellWisherprofileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/wellWisherprofileView.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,20 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-912">
-              <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wellWisherprofile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="99" column="114" selection-start-line="98" selection-start-column="53" selection-end-line="99" selection-end-column="114" />
+            <state relative-caret-position="289">
+              <caret line="183" column="54" selection-start-line="183" selection-start-column="54" selection-end-line="183" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -60,11 +47,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/organization_profileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+            <state relative-caret-position="101">
+              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="91" column="22" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="91" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -87,15 +92,6 @@
                 <element signature="e#1638#1645#1" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/govermentofficialProfileView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1015">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -198,12 +194,12 @@
         <option value="$PROJECT_DIR$/myrequest.php" />
         <option value="$PROJECT_DIR$/donorHome.php" />
         <option value="$PROJECT_DIR$/mydonations.php" />
-        <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
         <option value="$PROJECT_DIR$/othersDonerProfileView.php" />
         <option value="$PROJECT_DIR$/othersProfileView.php" />
         <option value="$PROJECT_DIR$/organization_donor_profileView.php" />
         <option value="$PROJECT_DIR$/selectorView.php" />
         <option value="$PROJECT_DIR$/organization_profileView.php" />
+        <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
       </list>
     </option>
   </component>
@@ -313,12 +309,12 @@
       <workItem from="1556745645043" duration="13889000" />
       <workItem from="1557091371954" duration="14949000" />
       <workItem from="1557172824756" duration="8015000" />
-      <workItem from="1557230184918" duration="6762000" />
+      <workItem from="1557230184918" duration="7245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224791000" />
+    <option name="totallyTimeSpent" value="225274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -397,13 +393,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deleteDonation.php" />
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/logout.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -550,13 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="91" column="22" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="91" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/signup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="773">
@@ -655,13 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/selectorView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
@@ -671,8 +646,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/organization_profileView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        <state relative-caret-position="101">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="91" column="22" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="91" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="183" column="54" selection-start-line="183" selection-start-column="54" selection-end-line="183" selection-end-column="54" />
         </state>
       </provider>
     </entry>
