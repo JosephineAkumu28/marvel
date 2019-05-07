@@ -302,7 +302,7 @@ header("Location:index.php");
                     <form style="color:black"  enctype="multipart/form-data" method="post">
                         <div class="modal-body">
                             <div class="w-100">
-                                <img class="img-fluid" src="'.$img_url.'" height="200px">
+                                <img class="img-fluid" src="'.$img_url.'" height="100px">
                               
                                 <hr>
                                 <div class="form-group mt-1">
