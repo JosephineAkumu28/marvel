@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/donorHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/donorHome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydonations.php" beforeDir="false" afterPath="$PROJECT_DIR$/mydonations.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donorHome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="186" column="64" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
+            <state relative-caret-position="426">
+              <caret line="178" column="81" lean-forward="true" selection-start-line="178" selection-start-column="81" selection-end-line="178" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -57,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mydonations.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="186" column="64" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
+            <state relative-caret-position="635">
+              <caret line="304" column="78" selection-start-line="304" selection-start-column="78" selection-end-line="304" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -191,8 +190,8 @@
         <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
         <option value="$PROJECT_DIR$/myrequest.php" />
         <option value="$PROJECT_DIR$/requesterHome.php" />
-        <option value="$PROJECT_DIR$/mydonations.php" />
         <option value="$PROJECT_DIR$/donorHome.php" />
+        <option value="$PROJECT_DIR$/mydonations.php" />
       </list>
     </option>
   </component>
@@ -303,18 +302,18 @@
       <workItem from="1557091371954" duration="14949000" />
       <workItem from="1557172824756" duration="8015000" />
       <workItem from="1557230184918" duration="9458000" />
-      <workItem from="1557256813860" duration="2877000" />
+      <workItem from="1557256813860" duration="3101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230364000" />
+    <option name="totallyTimeSpent" value="230588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15511727" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15511727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
@@ -335,7 +334,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10714286" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15511727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
@@ -650,17 +649,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mydonations.php">
+    <entry file="file://$PROJECT_DIR$/donorHome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="186" column="64" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
+        <state relative-caret-position="426">
+          <caret line="178" column="81" lean-forward="true" selection-start-line="178" selection-start-column="81" selection-end-line="178" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donorHome.php">
+    <entry file="file://$PROJECT_DIR$/mydonations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="186" column="64" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
+        <state relative-caret-position="635">
+          <caret line="304" column="78" selection-start-line="304" selection-start-column="78" selection-end-line="304" selection-end-column="78" />
         </state>
       </provider>
     </entry>

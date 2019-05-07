@@ -302,7 +302,7 @@ header("Location:index.php");
                         <div class="col-2">
                         <form class="form-inline" action="deleteRequest.php" method="post" enctype="multipart/form-data">
                             <input class="d-none" name="request_id" value="'.$id.'">
-                            <input class="btn btn-outline-danger"  value="Delete">
+                            <input class="btn btn-outline-danger" type="submit"  value="Delete">
                          </form>
                         </div>
 
