@@ -63,7 +63,7 @@ if($verification_status!=null){
         header("Location:requesterHome.php");
 
     }
-    }else if($verification_status="WAITING"){
+    }else if($verification_status=="WAITING"){
 
         header("Location:waiting.html");
 
