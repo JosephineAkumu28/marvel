@@ -35,7 +35,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:organization_profile.php");
                     }else {
                         header("Location:verification.php");
@@ -49,7 +49,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:organization_profile.php");
                     }else {
                         header("Location:verification.php");
@@ -65,7 +65,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:organization_profile.php");
                     }else {
                         header("Location:verification.php");
@@ -81,7 +81,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:wellWisherprofile.php");
                     }else {
                         header("Location:verification.php");
@@ -97,7 +97,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:othersProfile.php");
                     }else {
                         header("Location:verification.php");
@@ -113,7 +113,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:govermentofficialProfile.php");
                     }else {
                         header("Location:verification.php");
@@ -129,7 +129,7 @@ if($conn->query($sql)===TRUE) {
                     $stmt->fetch();
 
                     echo $stmt->num_rows();
-                    if($userid==null){
+                    if($userid!=null){
                         header("Location:organization_profile.php");
                     }else {
                         header("Location:verification.php");

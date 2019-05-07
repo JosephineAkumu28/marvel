@@ -157,12 +157,15 @@ values (?,?,?,?,?,?)");
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="requesterHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="myrequest.php"> <b class="fa fa-home"></b>MyRequest </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="selectorView.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>

@@ -39,6 +39,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($conn->query($sql)===TRUE){
 
 // prepare and bind
+        if($password_one===$password_two){
+
         $stmt = $conn->prepare("INSERT INTO marvel_users_auth (user_name, user_password, user_type,user_id,user_category) VALUES (?, ?, ?, ?,?)");
         $pass_to_store = password_hash($password_one,PASSWORD_DEFAULT);
         $user_id = md5($user_name);
@@ -84,6 +86,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $stmt->close();
         $conn->close();
+        }else{
+            $user_error='<div class="alert alert-danger alert-dismissible fade show w-100">Different Passwords Error
+                        <button class="close" role="button" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                    </div>';
+            echo $user_error;
+
+        }
     }else{
         echo $conn->error;
     }

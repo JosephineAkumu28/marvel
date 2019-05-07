@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MarvelAdmin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/MarvelAdmin/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MarvelAdmin/noprofile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/noprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denied.html" beforeDir="false" afterPath="$PROJECT_DIR$/denied.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donorHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/donorHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydonations.php" beforeDir="false" afterPath="$PROJECT_DIR$/mydonations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myrequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/myrequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization_profileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/organization_profileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othersDonerProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/othersDonerProfileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/selectorView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellWisherprofileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/wellWisherprofileView.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,94 +41,95 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/selectorView.php">
+        <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="898">
-              <caret line="87" column="27" lean-forward="true" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/signup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="182" column="52" lean-forward="true" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/clergyprofileView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/deny.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/govermentofficialProfileView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/organization_profileView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="104" column="2" lean-forward="true" selection-start-line="3" selection-end-line="104" selection-end-column="2" />
+            <state relative-caret-position="-3936">
+              <caret line="104" column="50" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/index.php">
+        <entry file="file://$PROJECT_DIR$/wellWisherprofile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+            <state relative-caret-position="422">
+              <caret line="295" column="27" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/organization_profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="154" selection-start-line="154" selection-end-line="154" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/organization_donor_profileView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2089">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/selectorView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/donorHome.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
               <folding>
-                <element signature="e#241#248#1" expanded="true" />
+                <element signature="e#1638#1645#1" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MarvelAdmin/wellWisherprofileView.php">
+        <entry file="file://$PROJECT_DIR$/govermentofficialProfileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3224">
-              <caret line="214" selection-start-line="214" selection-end-line="214" />
+            <state relative-caret-position="-1015">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/govermentofficialProfile.php">
+        <entry file="file://$PROJECT_DIR$/othersDonerProfileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="293" column="62" selection-start-line="293" selection-start-column="62" selection-end-line="293" selection-end-column="62" />
+            <state relative-caret-position="319">
+              <caret line="103" column="48" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mydonations.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="91" column="48" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myrequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1048">
+              <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -148,8 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/profiles/govermentofficialProfile.htm" />
-        <option value="$PROJECT_DIR$/profiles/clergyprofile.htm" />
         <option value="$PROJECT_DIR$/js/all.js" />
         <option value="$PROJECT_DIR$/requesterHome.html" />
         <option value="$PROJECT_DIR$/donorHome.html" />
@@ -161,37 +171,27 @@
         <option value="$PROJECT_DIR$/profiles/othersProfile.php" />
         <option value="$PROJECT_DIR$/othersProfile.htm" />
         <option value="$PROJECT_DIR$/organization_profile.html" />
-        <option value="$PROJECT_DIR$/selectorView.php" />
         <option value="$PROJECT_DIR$/deleteRequest.php" />
         <option value="$PROJECT_DIR$/deleteDonation.php" />
         <option value="$PROJECT_DIR$/js/nicEdit.js" />
         <option value="$PROJECT_DIR$/logout.php" />
-        <option value="$PROJECT_DIR$/donorHome.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/verify.php" />
         <option value="$PROJECT_DIR$/wellWisherDonorprofileView.php" />
-        <option value="$PROJECT_DIR$/mydonations.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/deny.php" />
-        <option value="$PROJECT_DIR$/organization_profileView.php" />
         <option value="$PROJECT_DIR$/waiting.html" />
         <option value="$PROJECT_DIR$/organization_donor_profileView.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/myrequest.php" />
         <option value="$PROJECT_DIR$/othersProfile.php" />
         <option value="$PROJECT_DIR$/wellWisherprofile.php" />
         <option value="$PROJECT_DIR$/govermentofficialProfileView.php" />
         <option value="$PROJECT_DIR$/organization_profile.php" />
-        <option value="$PROJECT_DIR$/othersDonerProfileView.php" />
         <option value="$PROJECT_DIR$/othersProfileView.php" />
         <option value="$PROJECT_DIR$/requesterHome.php" />
-        <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
-        <option value="$PROJECT_DIR$/denied.html" />
         <option value="$PROJECT_DIR$/clergyprofile.php" />
         <option value="$PROJECT_DIR$/clergyprofileView.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/pendingrequest.php" />
-        <option value="$PROJECT_DIR$/signup.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/organization_profileView.php" />
         <option value="$PROJECT_DIR$/selector.php" />
-        <option value="$PROJECT_DIR$/verification.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/othersProfileView.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/wellWisherprofileView.php" />
         <option value="$PROJECT_DIR$/govermentofficialProfile.php" />
@@ -199,6 +199,18 @@
         <option value="$PROJECT_DIR$/MarvelAdmin/clergyprofileView.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/govermentofficialProfileView.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/index.php" />
+        <option value="$PROJECT_DIR$/MarvelAdmin/noprofile.php.html" />
+        <option value="$PROJECT_DIR$/verification.php" />
+        <option value="$PROJECT_DIR$/MarvelAdmin/noprofile.html" />
+        <option value="$PROJECT_DIR$/denied.html" />
+        <option value="$PROJECT_DIR$/signup.php" />
+        <option value="$PROJECT_DIR$/myrequest.php" />
+        <option value="$PROJECT_DIR$/organization_profileView.php" />
+        <option value="$PROJECT_DIR$/selectorView.php" />
+        <option value="$PROJECT_DIR$/donorHome.php" />
+        <option value="$PROJECT_DIR$/mydonations.php" />
+        <option value="$PROJECT_DIR$/othersDonerProfileView.php" />
+        <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
       </list>
     </option>
   </component>
@@ -252,17 +264,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\marvel" />
+      <recent name="C:\wamp64\www\marvel\MarvelAdmin\js" />
+      <recent name="C:\wamp64\www\marvel\MarvelAdmin" />
+      <recent name="C:\wamp64\www\marvel\images" />
+      <recent name="C:\wamp64\www\marvel\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\marvel" />
       <recent name="C:\wamp64\www\marvel\MarvelAdmin" />
       <recent name="C:\wamp64\www\marvel\profiles" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\marvel\MarvelAdmin\js" />
-      <recent name="C:\wamp64\www\marvel\MarvelAdmin" />
-      <recent name="C:\wamp64\www\marvel" />
-      <recent name="C:\wamp64\www\marvel\images" />
-      <recent name="C:\wamp64\www\marvel\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -307,18 +319,19 @@
       <workItem from="1556740997304" duration="42000" />
       <workItem from="1556745645043" duration="13889000" />
       <workItem from="1557091371954" duration="14949000" />
-      <workItem from="1557172824756" duration="4346000" />
+      <workItem from="1557172824756" duration="8015000" />
+      <workItem from="1557230184918" duration="3215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214360000" />
+    <option name="totallyTimeSpent" value="221244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15191898" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15351813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
@@ -364,8 +377,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/clergyprofile.htm" />
     <entry file="file://$PROJECT_DIR$/donorProfile.htm" />
     <entry file="file://$PROJECT_DIR$/govermentofficialProfile.htm" />
     <entry file="file://$PROJECT_DIR$/othersProfile.htm" />
@@ -393,11 +404,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deleteDonation.php" />
-    <entry file="file://$PROJECT_DIR$/selectorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1133" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -417,27 +423,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wellWisherDonorprofileView.php" />
     <entry file="file://$PROJECT_DIR$/othersDonorProfile.php" />
-    <entry file="file://$PROJECT_DIR$/donorHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mydonations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="43" selection-start-line="43" selection-end-line="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4322">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/nicEdit-0fa866947dae306d5e5bf4fd00b6261a/nicEditOriginal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -450,67 +435,6 @@
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/js/nicEditOriginal.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/govermentofficialProfileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organization_donor_profileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organization_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2369">
-          <caret line="154" selection-start-line="154" selection-end-line="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organization_profileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6996">
-          <caret line="412" column="9" selection-start-line="412" selection-start-column="9" selection-end-line="412" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/othersDonerProfileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/othersProfileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3261">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requesterHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2707">
-          <caret line="10" column="78" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
-          <folding>
-            <element signature="e#1651#1658#1" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wellWisherprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="295" column="27" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/js/nicEdit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -518,52 +442,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/denied.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="366" selection-start-line="366" selection-end-line="366" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waiting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clergyprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="300" column="62" selection-start-line="300" selection-start-column="62" selection-end-line="300" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clergyprofileView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6443">
           <caret line="379" column="18" selection-start-line="379" selection-start-column="18" selection-end-line="379" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/verification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MarvelAdmin/pendingrequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="123" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="123" />
         </state>
       </provider>
     </entry>
@@ -595,27 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="182" column="52" lean-forward="true" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MarvelAdmin/selectorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="898">
-          <caret line="87" column="27" lean-forward="true" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="104" column="2" lean-forward="true" selection-start-line="3" selection-end-line="104" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/organization_profileView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
@@ -630,6 +491,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/noprofile.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MarvelAdmin/noprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waiting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="32" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MarvelAdmin/pendingrequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="123" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/deny.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -637,27 +529,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MarvelAdmin/wellWisherprofileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3224">
-          <caret line="214" selection-start-line="214" selection-end-line="214" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/govermentofficialProfileView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="850">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MarvelAdmin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state relative-caret-position="731">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MarvelAdmin/wellWisherprofileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3638">
+          <caret line="214" selection-start-line="214" selection-end-line="214" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/denied.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="91" column="22" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="91" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="89" column="116" selection-start-line="89" selection-start-column="116" selection-end-line="89" selection-end-column="116" />
           <folding>
             <element signature="e#241#248#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requesterHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="78" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clergyprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="300" column="62" selection-start-line="300" selection-start-column="62" selection-end-line="300" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MarvelAdmin/selectorView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="101" column="38" lean-forward="true" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organization_profileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="163" column="94" selection-start-line="163" selection-start-column="94" selection-end-line="163" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/othersProfileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organization_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organization_donor_profileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2089">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectorView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myrequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1048">
+          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydonations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="91" column="48" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donorHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+          <folding>
+            <element signature="e#1638#1645#1" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/govermentofficialProfileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1015">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/othersDonerProfileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="103" column="48" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3936">
+          <caret line="104" column="50" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wellWisherprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="295" column="27" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="27" />
         </state>
       </provider>
     </entry>

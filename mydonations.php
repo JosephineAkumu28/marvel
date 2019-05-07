@@ -49,7 +49,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
     $process = $_POST["process"];
     $img_url = "ddd";
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir.rand(0,100000). basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -89,7 +89,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 values (?,?,?,?,?,?,?)");
             $stmt->bind_param("sssisss",$title,$target_file,$category,$quantity,$description,$process,$_SESSION["ID"]);
             if($stmt->execute()){
-                header("Location:verify.php");
+                header("Location:mydonations.php");
 
 
             }else{

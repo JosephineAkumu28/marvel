@@ -80,7 +80,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 values (?,?,?,?,?,?)");
             $stmt->bind_param("sssiss",$title,$target_file,$category,$quantity,$description,$_SESSION["ID"]);
             if($stmt->execute()){
-                header("Location:verify.php");
+                header("Location:myrequest.php");
 
 
             }else{

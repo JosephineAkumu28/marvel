@@ -49,7 +49,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
     $process = $_POST["process"];
     $img_url = "ddd";
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir.rand(0,100000).basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -69,7 +69,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
         $uploadOk = 0;
     }
 // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 500000) {
+    if ($_FILES["fileToUpload"]["size"] > 5000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -89,7 +89,7 @@ if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
 values (?,?,?,?,?,?,?)");
             $stmt->bind_param("sssisss",$title,$target_file,$category,$quantity,$description,$process,$_SESSION["ID"]);
             if($stmt->execute()){
-                header("Location:verification.php");
+                header("Location:mydonations.php");
 
 
             }else{
@@ -157,11 +157,11 @@ header("Location:index.php");
                 <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>My Donations</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="selectorView.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>

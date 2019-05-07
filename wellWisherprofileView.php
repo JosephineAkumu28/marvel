@@ -102,7 +102,7 @@ if($_SESSION["ID"]!=null){
 values (?,?,?,?,?,?,?)");
                     $stmt->bind_param("sssisss",$title,$target_file,$category,$quantity,$description,$process,$_SESSION["ID"]);
                     if($stmt->execute()){
-                        header("Location:verify.php");
+                        header("Location:myrequest.php");
 
 
                     }else{
