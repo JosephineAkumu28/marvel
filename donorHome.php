@@ -252,7 +252,7 @@ header("Location:index.php");
 <div class="container">
 
         <?php
-        $stmt = $conn->prepare("select* from marvel_request_table");
+        $stmt = $conn->prepare("select * from marvel_request_table");
         if($stmt->execute()){
         $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$date,$owner_id);
         while ($stmt->fetch()){
@@ -280,7 +280,7 @@ header("Location:index.php");
         <div class="col-12 bg-light mt-2 ">
             <div class="row justify-content-between">
                 <div class="col-4 pr-3 pl-0">
-                    <img src="'.$img_url.'" class="card-img-top" height="180">
+                    <img src="'.$img_url.'"  height="150px">
 
                 </div>
                 <div class="col-8">

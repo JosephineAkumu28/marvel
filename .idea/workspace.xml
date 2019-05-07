@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/myrequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/myrequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requesterHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/requesterHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donorHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/donorHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydonations.php" beforeDir="false" afterPath="$PROJECT_DIR$/mydonations.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donorHome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="190" column="81" selection-start-line="190" selection-start-column="81" selection-end-line="190" selection-end-column="81" />
+            <state relative-caret-position="659">
+              <caret line="282" column="58" selection-start-line="282" selection-start-column="58" selection-end-line="282" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -57,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mydonations.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="326" column="13" selection-start-line="326" selection-start-column="13" selection-end-line="326" selection-end-column="13" />
+            <state relative-caret-position="479">
+              <caret line="281" column="59" selection-start-line="281" selection-start-column="59" selection-end-line="281" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -89,7 +89,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requesterHome.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
@@ -181,7 +181,6 @@
         <option value="$PROJECT_DIR$/MarvelAdmin/noprofile.html" />
         <option value="$PROJECT_DIR$/denied.html" />
         <option value="$PROJECT_DIR$/signup.php" />
-        <option value="$PROJECT_DIR$/donorHome.php" />
         <option value="$PROJECT_DIR$/organization_profileView.php" />
         <option value="$PROJECT_DIR$/selectorView.php" />
         <option value="$PROJECT_DIR$/othersProfileView.php" />
@@ -190,9 +189,10 @@
         <option value="$PROJECT_DIR$/organization_donor_profileView.php" />
         <option value="$PROJECT_DIR$/othersDonerProfileView.php" />
         <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
-        <option value="$PROJECT_DIR$/mydonations.php" />
         <option value="$PROJECT_DIR$/myrequest.php" />
         <option value="$PROJECT_DIR$/requesterHome.php" />
+        <option value="$PROJECT_DIR$/donorHome.php" />
+        <option value="$PROJECT_DIR$/mydonations.php" />
       </list>
     </option>
   </component>
@@ -303,12 +303,12 @@
       <workItem from="1557091371954" duration="14949000" />
       <workItem from="1557172824756" duration="8015000" />
       <workItem from="1557230184918" duration="9458000" />
-      <workItem from="1557256813860" duration="1979000" />
+      <workItem from="1557256813860" duration="2163000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229466000" />
+    <option name="totallyTimeSpent" value="229650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -636,20 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donorHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="190" column="81" selection-start-line="190" selection-start-column="81" selection-end-line="190" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mydonations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="326" column="13" selection-start-line="326" selection-start-column="13" selection-end-line="326" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myrequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -661,6 +647,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="304" column="66" selection-start-line="304" selection-start-column="66" selection-end-line="304" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donorHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="282" column="58" selection-start-line="282" selection-start-column="58" selection-end-line="282" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydonations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="281" column="59" selection-start-line="281" selection-start-column="59" selection-end-line="281" selection-end-column="59" />
         </state>
       </provider>
     </entry>

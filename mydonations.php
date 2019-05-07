@@ -279,7 +279,7 @@ header("Location:index.php");
         <div class="col-12 bg-light mt-2 ">
             <div class="row">
                 <div class="col-4 p-0">
-                    <img src="' . $img_url . '" class="img-fluid" height="300px">
+                    <img src="' . $img_url . '"  height="150px">
 
                 </div>
                 <div class="col-8">
