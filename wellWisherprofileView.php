@@ -54,6 +54,14 @@ if($_SESSION["ID"]!=null){
         $stmt->fetch();
         $stmt->close();
 
+        $stmt = $conn->prepare("select first_name,middle_name,last_name,img_url,id_no,alternative_email,phone_no,county,region,area,description  from marvel_well_wishers
+             where owner_id=?");
+        $stmt->bind_param("s",$_SESSION['ID']);
+        $stmt->execute();
+        $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,
+            $id_number,$alternative_email,$phone_no,$county,$region,$area,$description);
+        $stmt->fetch();
+
         if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
             $title = $_POST["title"];
             $category = $_POST["category"];
