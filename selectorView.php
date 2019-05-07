@@ -36,9 +36,9 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profile.php");
+                        header("Location:organization_profileView.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:donorHome.php");
                     }
                     $stmt->close();
                 case "church":
@@ -50,9 +50,9 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profile.php");
+                        header("Location:organization_profileView.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:donorHome.php");
                     }
                     $stmt->close();
 
@@ -66,9 +66,9 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profile.php");
+                        header("Location:organization_profileView.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:donorHome.php");
                     }
                     $stmt->close();
 
@@ -82,9 +82,9 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:wellWisherprofile.php");
+                        header("Location:wellWisherprofileView.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:donorHome.php");
                     }
                     $stmt->close();
 
@@ -98,7 +98,7 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:othersProfile.php");
+                        header("Location:othersDonerProfileView.php");
                     }else {
                         header("Location:verification.php");
                     }
@@ -114,9 +114,9 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:govermentofficialProfile.php");
+                        header("Location:govermentofficialProfileView.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:requesterHome.php");
                     }
                     $stmt->close();
 
@@ -132,7 +132,7 @@ if($conn->query($sql)===TRUE) {
                     if($userid!=null){
                         header("Location:organization_profile.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:requesterHome.php");
                     }
                     $stmt->close();
 
@@ -146,7 +146,7 @@ if($conn->query($sql)===TRUE) {
                     if($userid!=null){
                         header("Location:clergyprofileView.php");
                     }else {
-                        header("Location:verification.php");
+                        header("Location:requesterHome.php");
                     }
                     $stmt->close();
                     break;
