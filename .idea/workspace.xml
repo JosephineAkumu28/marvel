@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d07e2d-72b3-42d6-951f-5742c52cf858" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/wellWisherprofileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/wellWisherprofileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clergyprofileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/clergyprofileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donorHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/donorHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization_profileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/organization_profileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othersProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/othersProfileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/selectorView.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +33,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wellWisherprofileView.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -50,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/organization_profileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="-1623">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -77,8 +81,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/selectorView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="71" column="82" lean-forward="true" selection-start-line="71" selection-start-column="82" selection-end-line="71" selection-end-column="82" />
+            <state relative-caret-position="513">
+              <caret line="142" column="65" selection-start-line="142" selection-start-column="65" selection-end-line="142" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clergyprofileView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="168" column="58" selection-start-line="168" selection-start-column="58" selection-end-line="168" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -86,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/donorHome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-810">
-              <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+            <state relative-caret-position="445">
+              <caret line="190" column="81" selection-start-line="190" selection-start-column="81" selection-end-line="190" selection-end-column="81" />
               <folding>
                 <element signature="e#1638#1645#1" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -96,20 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/othersDonerProfileView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="172" column="58" selection-start-line="172" selection-start-column="58" selection-end-line="172" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/othersProfileView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="168" column="58" selection-start-line="168" selection-start-column="58" selection-end-line="168" selection-end-column="58" />
+            <state relative-caret-position="523">
+              <caret line="168" column="54" lean-forward="true" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -175,7 +179,6 @@
         <option value="$PROJECT_DIR$/organization_profile.php" />
         <option value="$PROJECT_DIR$/requesterHome.php" />
         <option value="$PROJECT_DIR$/clergyprofile.php" />
-        <option value="$PROJECT_DIR$/clergyprofileView.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/pendingrequest.php" />
         <option value="$PROJECT_DIR$/MarvelAdmin/organization_profileView.php" />
         <option value="$PROJECT_DIR$/selector.php" />
@@ -192,14 +195,15 @@
         <option value="$PROJECT_DIR$/denied.html" />
         <option value="$PROJECT_DIR$/signup.php" />
         <option value="$PROJECT_DIR$/myrequest.php" />
-        <option value="$PROJECT_DIR$/donorHome.php" />
         <option value="$PROJECT_DIR$/mydonations.php" />
         <option value="$PROJECT_DIR$/othersDonerProfileView.php" />
-        <option value="$PROJECT_DIR$/othersProfileView.php" />
         <option value="$PROJECT_DIR$/organization_donor_profileView.php" />
-        <option value="$PROJECT_DIR$/selectorView.php" />
-        <option value="$PROJECT_DIR$/organization_profileView.php" />
         <option value="$PROJECT_DIR$/wellWisherprofileView.php" />
+        <option value="$PROJECT_DIR$/donorHome.php" />
+        <option value="$PROJECT_DIR$/organization_profileView.php" />
+        <option value="$PROJECT_DIR$/clergyprofileView.php" />
+        <option value="$PROJECT_DIR$/selectorView.php" />
+        <option value="$PROJECT_DIR$/othersProfileView.php" />
       </list>
     </option>
   </component>
@@ -309,12 +313,12 @@
       <workItem from="1556745645043" duration="13889000" />
       <workItem from="1557091371954" duration="14949000" />
       <workItem from="1557172824756" duration="8015000" />
-      <workItem from="1557230184918" duration="7245000" />
+      <workItem from="1557230184918" duration="8046000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225274000" />
+    <option name="totallyTimeSpent" value="226075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -421,13 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="36" column="103" selection-start-line="36" selection-start-column="103" selection-end-line="36" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clergyprofileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6443">
-          <caret line="379" column="18" selection-start-line="379" selection-start-column="18" selection-end-line="379" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -598,28 +595,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/donorHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-          <folding>
-            <element signature="e#1638#1645#1" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/othersDonerProfileView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="172" column="58" selection-start-line="172" selection-start-column="58" selection-end-line="172" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/othersProfileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="168" column="58" selection-start-line="168" selection-start-column="58" selection-end-line="168" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -634,20 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1745">
           <caret line="168" column="104" selection-start-line="168" selection-start-column="104" selection-end-line="168" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/selectorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="71" column="82" lean-forward="true" selection-start-line="71" selection-start-column="82" selection-end-line="71" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organization_profileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
         </state>
       </provider>
     </entry>
@@ -669,6 +634,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="183" column="54" selection-start-line="183" selection-start-column="54" selection-end-line="183" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/donorHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="190" column="81" selection-start-line="190" selection-start-column="81" selection-end-line="190" selection-end-column="81" />
+          <folding>
+            <element signature="e#1638#1645#1" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clergyprofileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="168" column="58" selection-start-line="168" selection-start-column="58" selection-end-line="168" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organization_profileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1623">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectorView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="142" column="65" selection-start-line="142" selection-start-column="65" selection-end-line="142" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/othersProfileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="168" column="54" lean-forward="true" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
         </state>
       </provider>
     </entry>

@@ -48,8 +48,8 @@ $stmt = $conn->prepare("select first_name,middle_name,last_name,img_url,id_no,al
  where owner_id=?");
 $stmt->bind_param("s",$profile_id);
 $stmt->execute();
-$stmt->fetch();
 $stmt->bind_result($fist_name,$middle_name,$last_name,$target_file,$id_number,$alternative_email,$phone_no,$county,$region,$area,$description,$field,$role,$position);
+$stmt->fetch();
 $stmt->close();
 
     if($username!=null && $_SERVER["REQUEST_METHOD"]=="POST"){
@@ -166,7 +166,7 @@ header("Location:index.php");
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="selectorView.php.php"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="selectorView.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>

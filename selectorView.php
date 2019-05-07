@@ -116,7 +116,7 @@ if($conn->query($sql)===TRUE) {
 
                     break;
                 case "GOK" :
-                    $stmt = $conn->prepare("select owner_id from  goverment_officials where owner_id=? ");
+                    $stmt = $conn->prepare("select owner_id from  government_officials where owner_id=? ");
                     $stmt->bind_param("s", $_SESSION["ID"]);
                     $stmt->execute();
                     $stmt->bind_result($userid);
@@ -140,7 +140,7 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profile.php");
+                        header("Location:organization_profileView.php");
                     }else {
                         header("Location:requesterHome.php");
                     }

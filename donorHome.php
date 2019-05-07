@@ -188,7 +188,7 @@ header("Location:index.php");
                                 <img class="img-fluid" src="images/happy1.jpeg" height="200px">
                                 <hr>
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
+                                    <input type="file" class="custom-file-input"  id="customFile" name="fileToUpload" required>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <hr>

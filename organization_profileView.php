@@ -45,8 +45,8 @@ if($_SESSION["ID"]!=null){
          where owner_id = ?");
         $stmt->bind_param("s",$_SESSION['ID']);
         $stmt->execute();
-        $stmt->fetch();
         $stmt->bind_result($organization_name,$portal,$address,$fist_name,$middle_name,$last_name,$phone_no,$alternative_email,$target_file);
+        $stmt->fetch();
         $stmt->close();
 
 
