@@ -17,10 +17,10 @@ if ($conn->connect_error) {
 $sql ="use marvel_database";
 if($conn->query($sql)===TRUE) {
 
-        $stmt = $conn->prepare("select user_category from marvel_users_auth where user_id=? ");
+        $stmt = $conn->prepare("select user_category,user_type from marvel_users_auth where user_id=? ");
         $stmt->bind_param("s", $_SESSION["ID"]);
         $stmt->execute();
-        $stmt->bind_result($user_category);
+        $stmt->bind_result($user_category,$user_type);
 
         $stmt->fetch();
         $stmt->close();
@@ -66,9 +66,14 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profileView.php");
+                        if($user_type=="request"){
+                            header("Location:organization_profileView.php");
+                        }else{
+                            header("Location:organization_donor_profileView.php");
+                        }
+
                     }else {
-                        header("Location:donorHome.php");
+                        echo "error";
                     }
                     $stmt->close();
 
@@ -98,9 +103,14 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:othersDonerProfileView.php");
+                        if($user_type=="request"){
+                            header("Location:othersProfileView.php");
+                        }else{
+                            header("Location:othersDonerProfileView.php");
+                        }
+
                     }else {
-                        header("Location:verification.php");
+                        echo "error";
                     }
                     $stmt->close();
 
