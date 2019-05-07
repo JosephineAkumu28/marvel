@@ -242,7 +242,7 @@ header("Location:index.php");
 </nav>
 <div class="container">
     <?php
-    $stmt = $conn->prepare("select* from marvel_request_table where owner_id=?");
+    $stmt = $conn->prepare("select * from marvel_request_table where owner_id=?");
     $stmt->bind_param("s",$_SESSION["ID"]);
     if($stmt->execute()){
         $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$date,$owner_id);

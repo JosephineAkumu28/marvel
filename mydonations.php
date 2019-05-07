@@ -188,7 +188,7 @@ header("Location:index.php");
                                 <img class="img-fluid" src="images/happy1.jpeg" height="200px">
                                 <hr>
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" name="img" id="customFile" name="fileToUpload" required>
+                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload" required>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <hr>
@@ -255,8 +255,9 @@ header("Location:index.php");
     $stmt = $conn->prepare("select * from marvel_donation_table where owner_id=?");
     $stmt->bind_param("s",$_SESSION["ID"]);
     if($stmt->execute()){
-        $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$procces,$date,$owner_id);
+
         if($stmt->num_rows>0) {
+            $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$procces,$date,$owner_id);
             while ($stmt->fetch()) {
 
                 $p= strpos($description,"<div>");
