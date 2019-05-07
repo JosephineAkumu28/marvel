@@ -166,11 +166,11 @@ header("Location:index.php");
                 <a class="nav-link" href="donorHome.php"> <b class="fa fa-home"></b>Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="mydonations.php.php"><b class="fa fa-user-friends"></b>My Requests</a>
+                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>My Requests</a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="selectorView.php.php"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="selectorView.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>

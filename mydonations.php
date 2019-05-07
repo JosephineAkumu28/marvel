@@ -252,7 +252,7 @@ header("Location:index.php");
 <div class="container">
 
     <?php
-    $stmt = $conn->prepare("select* from marvel_donation_table where owner_id=?");
+    $stmt = $conn->prepare("select * from marvel_donation_table where owner_id=?");
     $stmt->bind_param("s",$_SESSION["ID"]);
     if($stmt->execute()){
         $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$procces,$date,$owner_id);
