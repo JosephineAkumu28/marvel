@@ -43,6 +43,7 @@ if($_SESSION["ID"]!=null){
 
         $stmt = $conn->prepare("select org_name,portal,address,first_name,middle_name,last_name,phone,alternative_email,img_url from  marvel_organization_profile
          where owner_id = ?");
+        $stmt->bind_param("s",$_SESSION['ID']);
         $stmt->execute();
         $stmt->fetch();
         $stmt->bind_result($organization_name,$portal,$address,$fist_name,$middle_name,$last_name,$phone_no,$alternative_email,$target_file);

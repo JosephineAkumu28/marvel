@@ -170,7 +170,7 @@ header("Location:index.php");
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="selector.php"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="selectorView.php.php"><b class="fa fa-user-friends"></b>Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <b class="fa fa-dove"></b></b>About</a>

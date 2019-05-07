@@ -166,7 +166,7 @@ values (?,?,?,?,?,?,?)");
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>Profile</a>
+                <a class="nav-link" href="mydonations.php"><b class="fa fa-user-friends"></b>My Donation</a>
             </li>
 
             <li class="nav-item">

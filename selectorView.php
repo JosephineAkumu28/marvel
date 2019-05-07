@@ -36,7 +36,7 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profileView.php");
+                        header("Location:organization_donor_profileView.php");
                     }else {
                         header("Location:donorHome.php");
                     }
@@ -50,7 +50,7 @@ if($conn->query($sql)===TRUE) {
 
                     echo $stmt->num_rows();
                     if($userid!=null){
-                        header("Location:organization_profileView.php");
+                        header("Location:organization_donor_profileView.php");
                     }else {
                         header("Location:donorHome.php");
                     }
