@@ -255,8 +255,6 @@ header("Location:index.php");
     $stmt = $conn->prepare("select * from marvel_donation_table where owner_id=?");
     $stmt->bind_param("s",$_SESSION["ID"]);
     if($stmt->execute()){
-
-        if($stmt->num_rows>0) {
             $stmt->bind_result($id,$title,$img_url,$category,$quantity,$description,$procces,$date,$owner_id);
             while ($stmt->fetch()) {
 
@@ -327,10 +325,6 @@ header("Location:index.php");
 
 
             }
-        }else{
-
-            echo "No donations yet";
-        }
     }else{
         echo $stmt->error;
     }
