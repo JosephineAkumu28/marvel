@@ -300,7 +300,7 @@ header("Location:index.php");
                     <div class="row al align-content-end">
                         <div class="col-10"></div>
                         <div class="col-2">
-                        <form class="form-inline" action="deleteRequest.php" method="post" enctype="multipart/form-data">
+                        <form class="form-inline" action="deleteDonation.php" method="post" enctype="multipart/form-data">
                             <input class="d-none" name="request_id" value="'.$id.'">
                             <input class="btn btn-outline-danger" type="submit"  value="Delete">
                          </form>
